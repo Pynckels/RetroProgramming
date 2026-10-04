@@ -16,15 +16,26 @@ You can install dosbox-x by means of
 
     sudo apt install dosbox-x
 
-Then unzip this zip file to your ~ directory
+The `RetroProgramming` repository can be installed in your home directory (`~`) in either of the following ways.
 
+* Option 1: Clone the repository with Git
+
+    cd ~
+    git clone https://github.com/Pynckels/RetroProgramming.git
+    chmod +x ~/RetroProgramming/dosbox-x.sh
+
+* Option 2: Download and extract the repository as a ZIP file
+
+    unzip RetroProgramming-main.zip
+    mv RetroProgramming-main RetroProgramming
+    chmod +x ~/RetroProgramming/dosbox-x.sh
 
 CONFIGURATION
 -------------
 
 To configure the dosbox-x, you can edit the file
 
-    ./dosbox-x.conf
+    ~/RetroProgramming/dosbox-x.conf
 
 
 STARTUP
@@ -32,6 +43,6 @@ STARTUP
 
 To start this retro programming dosbox: execute (run) the file
 
-    ./dosbox-x.sh
+    ~/RetroProgramming/dosbox-x.sh
 
 This can be done from the command line interface (terminal) or from the file manager in the graphical user interface.

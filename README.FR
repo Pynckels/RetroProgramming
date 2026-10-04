@@ -16,14 +16,26 @@ Vous pouvez installer dosbox-x à l’aide de la commande suivante dans le termi
 
     sudo apt install dosbox-x
 
-Décompressez ensuite ce fichier zip dans votre répertoire personnel ~
+Le dépôt `RetroProgramming` peut être installé dans votre répertoire personnel (`~`) de l’une des façons suivantes.
 
+* Option 1 : Cloner le dépôt avec Git
+
+    cd ~
+    git clone https://github.com/Pynckels/RetroProgramming.git
+    chmod +x ~/RetroProgramming/dosbox-x.sh
+
+* Option 2 : Télécharger et extraire le dépôt sous forme de fichier ZIP
+
+    unzip RetroProgramming-main.zip
+    mv RetroProgramming-main RetroProgramming
+    chmod +x ~/RetroProgramming/dosbox-x.sh
 
 CONFIGURATION
 -------------
 
 Pour configurer dosbox-x, vous pouvez modifier le fichier suivant :
-    ./dosbox-x.conf
+
+    ~/RetroProgramming/dosbox-x.conf
 
 
 DÉMARRAGE
@@ -31,6 +43,6 @@ DÉMARRAGE
 
 Pour démarrer cet environnement de programmation rétro sous dosbox, exécutez le fichier suivant :
 
-    ./dosbox-x.sh
+    ~/RetroProgramming/dosbox-x.sh
 
 Cela peut être fait depuis l’interface en ligne de commande (le terminal) ou depuis le gestionnaire de fichiers de l’interface graphique.
