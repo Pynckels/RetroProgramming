@@ -1,0 +1,458 @@
+
+                       FEATURES OF VOLKSWRITER 3
+
+              FOR USERS OF EARLIER VERSIONS OF VOLKSWRITER
+
+
+
+This document is for those who are familiar with an earlier Volks
+writer.  We want to introduce you to the new features of Volkswriter 3
+in terms you will find familiar -- by relating them to the features of
+the earlier versions.
+
+
+                      WHAT'S NEW AT THE MAIN MENU
+
+The options you see at the Main Menu have been rearranged.  Two of the
+old options have been removed:  Format Selection is now reached with F9
+during editing, and Help is now reached by pressing F1 at the Main Menu.
+Two new options have been added - Style Sheets and Utilities.
+
+The D option, formerly "Display All Files", is now called Document
+Directory.  It still displays the files on the specified drive or subdi
+rectory, but you can also use DOS wildcards (* and ?) to see only a spe
+cific group of your files (see your DOS manual).  Subdirectories are
+indicated with angle brackets < > around them (see Chapter 2).
+
+The Retrieve function has been renamed Revise Document, but there is no
+change in the way you use it.
+
+
+
+                       FINDING THE RIGHT FUNCTION
+
+
+All the capability you found in Volkswriter Deluxe - and much more - is
+here in Volkswriter 3, but you may find it in a different place.  Here's
+a guide to help you find familiar functions:
+
+..LAYOUT 2  
+1.  Ctrl-F1 previously brought up the Format Selection Menu.  These
+    options (and more, as we'll see) are now part of the Layouts Menu,
+    which you reach by pressing F9.  Ctrl-F1 now takes you to a new menu
+    of "preferences."
+
+2.  F9 is the key you used with Deluxe to change tabs or margins on the
+    "ruler line."  The ruler line is now part of the layout, so F9 still
+    takes you there; just press F9 and then T (for Tabs and Margins).
+
+..LAYOUT 3  
+    It's easy to make a change in tabs or margins:  First, move the cur
+    sor to the line where you want the new tabs or margins to go into
+    effect.  Press F9 and then press T to get to the ruler line.  Set
+    the margins and tabs you want, and then press F9 twice.  That's all
+    there is to it.
+
+    Your new margins and tabs go into effect from the line where the
+    cursor was when you pressed F9.  If you want to set margins and tabs
+    for the entire document, just move the cursor to Line 1 before you
+    press F9.  All changes of tabs or margins will be stored with the
+    document, so you don't need to think about associated formats any
+    more.
+
+    We'll say more about converting your old Volkswriter documents to
+    Volkswriter 3 documents below.  To learn about layouts in detail,
+    use the Revise function to retrieve TUTOR3, and see Chapter 6 in the
+    manual.
+
+3.  F2, which you used for storing documents, is now the Spelling key.
+    To store a partial document, use Ctrl-F10.  If you have a block of
+    text marked in your document and press Ctrl-F10, you will be asked
+    to confirm that you want to store only the block.
+
+    To store your entire document, we recommend that you press Alt-F10,
+    to exit to the Main Menu, and S to Store.  If you want to continue
+    editing, pressing E now takes you back to the place in the document
+    where you were, instead of to the beginning of the file (see Store
+    in Chapter 4, and Storing Part of a File in Chapter 8).
+
+
+
+..LAYOUT 1  
+                             NEW FUNCTIONS
+
+
+..LAYOUT 2  
+1.  Ctrl-F9 is used for math and sorting, which you can do at any time
+    while editing.  The general procedure is to mark the column(s) or
+    row(s) with Ctrl-F5 and Ctrl-F6; then press F9 and select the func
+    tion you want (see TUTOR5 and Chapter 9).
+
+2.  Spelling uses the F2 key.  Press F2 once to check a single word at
+    the cursor -- the word you have just typed, for example.  Press F2 a
+    second time to check continuously from the cursor line down, or to
+    check a marked block (see TUTOR5 and Chapter 5).
+
+3.  Hyphenation occurs automatically, whenever words are "wrapped" at
+    the right margin, with no interruption of your work.
+
+4.  F9 is the layout key, discussed above.  Three new ruler-line symbols
+    let you control indenting/outdenting of the first line of para
+    graphs; control the hyphenation zone, which determines how long a
+    word must be before it is a candidate for hyphenation; and let you
+    enter decimal tabs (see TUTOR3 and Chapter 6).
+
+5.  Reformatting now occurs automatically, when you make a change in a
+    paragraph and then move the cursor.  We'll discuss reformatting in a
+    moment.
+
+..page
+
+
+..LAYOUT 1  
+                       FAMILIAR FEATURES ENHANCED
+
+..LAYOUT 2  
+1.  Ctrl-F3, formerly Proof, is now "Marks" in the F1 Help menu.  It
+    allows you to turn on or off display of special effects markers. The
+    markers can remain turned off while you work (see Show/Hide Markers
+    in Chapter 4).
+
+..LAYOUT 3  
+    You will find it a pleasure to work with the markers hidden.  Refor
+    matting now stops at a blank line, so you don't need to check for
+    paragraph-end symbols to see where reformatting will stop.  Turn on
+    the markers if you need to check the placement of symbols, or to
+    check which font you have selected.
+
+    Certain functions require you to have markers hidden.  Math func
+    tions do not work with markers displayed.  You should also have the
+    markers turned off when marking a block and setting bold, shadow,
+    underlining, overstrike, or font selections (otherwise you may get
+    extra special-effect markers).
+
+    To delete a paragraph-end symbol, you first turn the markers on
+    (except in the special case of joining two paragraphs, described
+    below), and then delete the symbol.  If you want to delete a marker,
+    turn markers on with Ctrl-F3, delete symbols as desired, and then
+    turn markers off by pressing Ctrl-F3 again.
+
+
+..LAYOUT 2  
+2.  Automatic reformatting takes care of nearly all reformatting of
+    paragraphs you will need.  Automatic reformatting does not delete
+    leading spaces on the first line of a paragraph.
+
+..LAYOUT 3  
+    The F8 key is still available if you need to reformat manually.  F8
+    follows exactly the margins in the layouts in your document, so it
+    does delete leading spaces on the first line of a paragraph.  By
+    using the # symbol in the ruler line, you can specify indentation if
+    you want it for the first lines of your paragraphs.
+
+    F8 will also reformat text you have entered with a temporary left
+    margin using Shift-Tab.  However, since you can have different left
+    margins in different parts of your document, you should seldom need
+    Shift-Tab.
+
+    As noted, reformatting with F8 now stops at a blank line, like auto
+    matic reformatting.
+
+    You can also mark part or all of your text with F5 and F6, and press
+    F8 to reformat the marked block (global reformatting). 
+
+    If you want to join two paragraphs, place the cursor a space or two
+    after the last character in the first paragraph (use the F3 key to
+    get there) and press F8.  The first paragraph must end with a para
+    graph-end symbol, and there must not be a layout change after the
+    first paragraph.  The second paragraph will be joined to the first.
+..LAYOUT 2  
+
+3.  Column functions have been enhanced.  Columns are used for math and
+    sorting.  The moving, copying, and deleting functions have changed
+    as follows:
+
+    Column Move or Copy Horizontally - If you place the cursor on the
+    same line as the Ctrl-F5 marker (a horizontal move or copy), the
+    marked column is removed from its original placement and inserted at
+    the cursor position.  Text or columns at the destination are pushed
+    to the right to make room.  No reformatting occurs.
+
+    Column Move or Copy Vertically - If you place the cursor on a dif
+    ferent line than the Ctrl-F5 marker (a vertical move or copy), the
+    marked column is removed from its original placement, and it over
+    writes the old information at the destination.  No reformatting
+    occurs, and text at the destination is not pushed to the right.
+
+    Column Delete - After marking the column and pressing Alt-F8 to
+    delete the block, you will now be asked whether you want to delete
+    the space occupied by the column ("Delete"), or replace the column
+    with blanks ("Blank").
+
+4.  You can now move more quickly through the menus.  You no longer have
+    to move the cursor down through a list of options to reach the one
+    you want to change, as you did with the old Format menu.  For those
+    options with Yes/No (Y/N) answers, simply press the corresponding
+    letter to "toggle" the selection from Yes to No, or from No to Yes.
+    The cursor only moves to those options that require you to enter
+    information, such as character size.
+
+5.  Centering, Alt-F9, has been enhanced.  Pressing Alt-F9 on a line
+    centers it, and automatically places a paragraph symbol and a spe
+    cial centering marker at the end of the line.  A centered line will
+    not be moved by reformatting.  To "un-center" a centered line, place
+    the cursor to the left of the text, where you want the text aligned,
+    and press F4.
+
+6.  The F4 key now deletes leading blanks before a word, if there are
+    any, without deleting the word.  If you press F4 again, it deletes
+    one word at a time including any trailing blanks, just as before.
+    Once  you have deleted all the words on a line to the right of the
+    cursor, pressing F4 again causes the line to reformat.  Then conti
+    nuing to press F4 will continue deleting words and blanks as usual.
+..LAYOUT 3  
+
+    F4 also "un-centers" a centered line if the cursor is in the space
+    to the left of the text.
+..LAYOUT 2  
+
+7.  A block or column you mark is now displayed in reverse video.
+
+8.  Block movements now cause reformatting at origin and destination, so
+    your text will conform to the layouts in effect at both locations.
+
+..LAYOUT 3  
+9.  You can turn on or off special printing effects (such as boldface or
+    underlining) for a marked block.  This makes it easy to change
+    printing effects for several paragraphs at once.
+
+..LAYOUT 1  
+
+                            THERE'S MORE...
+
+To Stop or Cancel a Function:  You can now interrupt certain functions
+that you were not able to stop previously.  If you press F10 during
+spelling verification (F2), global reformatting (F8), replace (Alt-F7),
+or revise layout (choice R from the Layout Menu), you cancel the func
+tion.  Pressing any other key will display a message asking if you want
+to "Cancel?" or "Stop?".  Pressing Enter is the same as answering No to
+the question, and the function will resume.  If you cancel reformatting,
+be sure to check your text.  Correct it and use F8 to reformat that
+paragraph or line.
+
+
+Headers and Footers:  With Volkswriter 3, you can have a different
+header or footer on the same line of odd and even pages.  The headers in
+the manual are an example.  Your old ..head and ..foot commands will
+work without change. Note that options such as lines per inch and char
+acter size in headers and footers throughout your document are governed
+by Layout 1.
+
+
+Ctrl-U:  The Ctrl-U (section symbol) no longer functions as a page
+break.  If you used Ctrl-U in your documents, it is easy to replace them
+with  ..PAGE commands:  Press Alt-F7.  At the "REPLACE: "  prompt, press
+Ctrl-U.  At the "WITH: " prompt, enter "..page".  Answer "Y" to the ALL?
+prompt.
+
+
+Printing in Boldface or Shadowprint:  Two options that were available
+with formats have been removed from the layout menu: BOLD and SHADOW.
+With some printers, these were used to get the highest quality printout.
+You can still print your document in boldface or shadow: mark the entire
+document with F5 and F6, and then press Shift-F7, to select Boldface, or
+Shift-F10 for shadowprint.
+
+..LAYOUT 3  
+
+
+                     USING YOUR OLD VOLKSWRITER FORMATS
+
+..LAYOUT 1  
+
+Volkswriter 3 will automatically convert the old formats that go with
+your Volkswriter Deluxe document into layouts.  This will happen auto
+matically when you retrieve your Volkswriter Deluxe file that has an
+associated format.  There are only two requirements: the Volkswriter
+Deluxe file must be a standard document that includes paragraph-end sym
+bols, and the format file(s) must be on the same disk and directory as
+the file.
+
+When you retrieve one of these files, its associated format becomes Lay
+out 1 of the document.  Any other formats specified within the document
+with  ..FORMAT commands become the other layouts of the document, up to
+the total of 15 possible different layouts.  When you store the docu
+ment, all the layouts will be stored with it permanently, and it will
+then be a Volkswriter 3 document.
+
+To convert formats to layouts for new Volkswriter 3 files: If you have
+Volkswriter Deluxe formats that you want to continue using for new
+documents you create with Volkswriter 3, you can convert them to "style
+sheets."  All you do is retrieve one of the Deluxe files that uses the
+formats, as above.  Then exit to the Main Menu and select the L option
+to make a style sheet.  Indicate the extension that you want this style
+sheet applied to.
+
+When you do this, Volkswriter 3 will automatically use the style sheet
+in the future whenever you create a new document with that extension.
+It is similar to Volkswriter Deluxe's use of associated formats, except
+that the style sheet is a starting point for a new document when you
+create it; once you store the document, all the layout information is
+also stored, and that document no longer refers to the style sheet.  The
+style sheet will also be used when you retrieve a Volkswriter Deluxe
+document that has the same extension (unless there are embedded
+ ..FORMAT commands in the document; in that case, no style sheet will be
+used, only the formats).
+
+
+
+                       CREATING PLAIN TEXT FILES
+
+
+Volkswriter 3 adds layout information to your documents.  When you want
+a plain DOS file, for use with another program, you can create one by
+using a * to mark the right margin in Layout 1 of your document.  Such a
+file will not contain layout information, but otherwise can contain all
+256 ASCII characters (see Chapter 8). To create a plain ASCII file, with
+only the standard character set (from ASCII 32 to ASCII 127), use the
+"export" option of the Utilities Menu (Chapter 10).
+
+
+..page
+
+                       CUSTOMIZED PRINTER TABLES
+
+
+NOTE:  SKIP THE FOLLOWING SECTION UNLESS YOU HAVE A VOLKSWRITER DELUXE
+CUSTOMIZED PRINTER TABLE THAT YOU WANT TO USE WITH VOLKSWRITER 3.
+
+
+Enhancements and changes have been made to many of the existing Volks
+writer Deluxe printer tables, and many new printer tables have been
+added.  We have expanded our documentation to include a better way of
+determining which printer table number you should use in your layouts.
+See Appendix D.
+
+Please try the new printer table that is suggested for your printer.
+If, after trying the new printer table, you still want to use a custom
+printer table from Volkswriter Deluxe, do the following:
+
+..LAYOUT 2  
+1.  Use the Printer Table filename chart in Appendix D to determine the
+    filename of your custom printer table.  Go to the DOS prompt on your
+    computer.
+
+2.  FOR DISKETTE SYSTEMS
+
+..LAYOUT 3  
+    Place your old working Volkswriter Deluxe program diskette in Drive
+    A and place your new working Volkswriter 3 Program 2 diskette in
+    Drive B.
+
+    Set the default drive to A by typing  A:  and pressing the Enter
+    key.  Type the following commands, and press Enter after each one:
+
+    COPY A:oldfilename.TBL B:VWPRnnn.TBL
+    COPY A:oldfilename.PRP B:VWPRnnn.PRP
+
+    where     oldfilename is the filename of your Volkswriter Deluxe
+                          custom printer table
+
+                   nnn    is the printer type number
+
+    NOTE:  You will not have a .PRP table unless your printer supports
+    proportional spacing.
+
+
+
+    FOR HARD DISK SYSTEMS
+
+    Set your current directory to your old Volkswriter 3 subdirectory by
+    using the appropriate CD\ command.  This examples assumes that your
+    hard disk is Drive C; if it is not, substitute the appropriate drive
+    specification.
+
+    Type the following commands and press Enter after each one:
+
+    COPY C:oldfilename.TBL \newvw3dir\VWPRnnn.TBL
+    COPY C:oldfilename.PRP \newvw3dir\VWPRnnn.PRP
+
+    where    oldfilename  is the filename of your Volkswriter Deluxe
+                          custom printer table
+
+             newvw3dir    the new subdirectory that contains your Volks
+                          writer 3 program files
+
+                    nnn   is the printer type number 
+
+    NOTE:  You will not have a .PRP table unless your printer supports
+    proportional spacing.
+
+..LAYOUT 1  
+This procedure will make your old custom table available with Volks
+writer 3 with the same printer number.  This will eliminate the need to
+change printer numbers in your layouts.  If the printer number that you
+used was one found in the VW3 printer filename list, this procedure
+overwrites that printer table on your working VW3 disk.
+
+
+CHANGING THE DEFAULT PRINTER NUMBER
+
+If you want to change the default printer number, do the following:
+
+..LAYOUT 2  
+1.  At the VW3 main menu, press C for Create a document.  Create a file
+    with an extension of .LYT.  For example, C.LYT.  This guarantees
+    that you will activate the universal style sheet (VWSTYLE.LYT).
+
+2.  Press the F9 key, and select D for Document Options, then T for
+    Printer Type.  Enter the desired printer number and press Enter.
+    Then F9 to set it, F10 to exit the Layout menu.
+
+3.  Press Alt-F10 to exit to the Main Menu, press L for Style Sheet.
+    Choose U to create a Universal style sheet.
+
+
+ACCESSING THE NEW PRINTER TABLE FROM CONFIGUR
+
+1.  In order to access your custom table with Option 3 of the CONFIGUR
+    program you will have to modify the list of printers that is used by
+    CONFIGUR.  This file is called VWPRCONF.TBL and is located in a sub
+    directory called PRINTERS on your working Volkswriter 3 INSTALLATION
+    disk.
+
+2.  From the Volkswriter 3 Main Menu, press D (Document Directory), and
+    enter the following at the DRIVE, PATH, or DOCUMENT GROUP prompt:
+
+..LAYOUT 3  
+    d:\PRINTERS
+
+    where d = the drive that contains the Installation Disk
+
+..LAYOUT 2  
+3.  Press F10 to cancel the directory display, then press R for Revise
+    Document.  Enter the filename: VWPRCONF.TBL.
+
+4.  Press Ctrl-End to move to the end of the file.  You will see several
+    lines labeled RESERVED FOR LIFETREE USE.
+
+5.  Place the cursor on the first of these lines, and with Insert off,
+    type the name of your printer.  In Columns 38 through 40, enter the
+    printer number you are using for this printer.  Be sure that the
+    last digit of your printer number is in Column 40.
+
+6.  Press Alt-F10 to exit and press S to store the file under the same
+    name.
+
+7.  The next time you run Option 3 of the CONFIGUR program, your custom
+    printer table will appear at the end of the printer list.
+
+..LAYOUT 1  
+WARNING:  Do NOT change ANY of the numbers at the top of this file, or
+alter any other lines besides the RESERVED lines.  Do not use the INSERT
+or DELETE keys when editing this file.
+LAYOUT 000
+ª   B 
+          <     ?   P   ú \------+------+----------------+--------------------+----------------@-/------------+---------+---------+----------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+-----                    	 $B 
+          <     ?   P   ú #---\--+------+----------------+--------------------+----------------@-/------------+---------+---------+----------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+-----                      $B 
+          <     ?   P   ú ----\--+------+----------------+--------------------+----------------@-/------------+---------+---------+----------+--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+-----                        $B           <   ?   P   ú ---#-\-+---+------------+---------+---------+-

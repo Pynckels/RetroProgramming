@@ -1,0 +1,8 @@
+ebc2asc.exe: ebc2asc.obj ebc2ascA.obj
+  link /NOLOGO ebc2asc+ebc2ascA,ebc2asc,NUL,slibce;
+
+ebc2asc.obj: ebc2asc.c
+  cl /c ebc2asc.c
+
+ebc2asca.obj: ebc2asca.asm
+  tasm ebc2asca /ml

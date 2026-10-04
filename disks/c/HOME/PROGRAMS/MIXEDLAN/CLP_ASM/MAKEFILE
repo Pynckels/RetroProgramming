@@ -1,0 +1,14 @@
+all: tonedemo.exe
+
+tonedemo.exe: tonedemo.obj tone.obj
+  RTLINK FI tonedemo,tone
+
+tonedemo.obj: tonedemo.prg
+  CLIPPER tonedemo /N /W
+
+tone.obj: tone.asm
+  ML /c /Zm tone.asm
+
+clean:
+  del *.exe
+  del *.obj

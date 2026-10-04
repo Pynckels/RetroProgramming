@@ -1,0 +1,116 @@
+Documentation for BINOBJ Utility Program
+컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴컴
+
+  The utility program BINOBJ.EXE converts any binary file to an .OBJ
+  file so it can be linked into a Turbo Pascal program as a
+  "procedure." This is useful if you have a binary data file that must
+  reside in the code segment or is too large to make into a typed
+  constant array. For example, you can use BINOBJ along with the Graph
+  unit to link the graphics driver or font files directly into your
+  .EXE. Then, to use your graph program, you need only have the .EXE
+  file (see the example, GRLINK.PAS on disk III).
+
+  BINOBJ takes 3 parameters:
+
+    BINOBJ   <source[.BIN]>  <destination[.OBJ]>  <public name>
+
+  <source> is the binary file to convert; <destination> is the name of
+  the .OBJ to be produced; and <public name> is the name of the
+  procedure as it will be declared in your Turbo Pascal program.
+
+  In the following example, the procedure ShowScreen takes a pointer
+  as a parameter and moves 4000 bytes of data to screen memory. The
+  file called MENU.DTA contains the image of the main menu screen (80
+  * 25 * 2 = 4000 bytes).  Here's the simple (no error-checking!)
+  version of MYPROG.PAS:
+
+    program MyProg;
+    uses Crt;
+
+    procedure ShowScreen(var ScreenData : pointer);
+    { Display a screenful of data--no error-checking! }
+    var
+      ScreenSegment : word;
+    begin
+      if (Lo(LastMode) = 7) then            { mono? }
+        ScreenSegment := $B000
+      else
+        ScreenSegment := $B800;
+      Move(ScreenData^,                     { from pointer }
+           Ptr(ScreenSegment, 0)^,          { to video memory }
+           4000);                           { 80 * 25 * 2 }
+    end;
+
+    var
+      MenuP : pointer;
+      MenuF : file;
+    begin
+      Assign(MenuF, 'MENU.DTA');            { open screen data file }
+      Reset(MenuF, 1);
+      GetMem(MenuP, 4000);                  { allocate buffer on heap }
+      BlockRead(MenuF, MenuP^, 4000);       { read screen data }
+      Close(MenuF);
+      ShowScreen(MenuP);                    { display screen }
+    end.
+
+  The screen data file (MENU.DTA) is opened and then read into a
+  buffer on the heap. MENU.DTA must be present at runtime for this
+  program to work. Instead, you can use BINOBJ to convert MENU.DTA to
+  an .OBJ file (MENUDTA.OBJ) and tell it to associate the data with a
+  procedure called MenuData. Then you can declare the fake external
+  procedure MenuData, which actually contains the screen data. Once
+  you link in the .OBJ file with the {$L} compiler direct, MenuData
+  will be 4000 bytes long and contain your screen data. First, run
+  BINOBJ on MENU.DTA:
+
+    binobj MENU.DTA MENUDTA MenuData
+
+  The first parameter, MENU.DTA, is the now-familiar file of screen
+  data; the second, MENUDTA, is the name of the .OBJ file to be
+  created (since we didn't specify an extension, .OBJ will be added).
+  The last parameter, MenuData, is the name of the external procedure
+  as it will be declared in your program. Now that you've converted
+  MENU.DTA to an .OBJ file, here's what the new MYPROG.PAS looks like:
+
+    program MyProg;
+    uses Crt;
+
+    procedure ShowScreen(ScreenData : pointer);
+    { Display a screenful of data--no error checking! }
+    var
+      ScreenSegment : word;
+    begin
+      if (Lo(LastMode) = 7) then            { mono? }
+        ScreenSegment := $B000
+      else
+        ScreenSegment := $B800;
+      Move(ScreenData^,                     { from pointer }
+           Ptr(ScreenSegment, 0)^,          { to video memory }
+           4000);                           { 80 * 25 * 2 }
+    end;
+
+    procedure MenuData; external;
+    {$L MENUDTA.OBJ }
+
+    begin
+      ShowScreen(@MenuData);                { display screen }
+    end.
+
+  Notice that ShowScreen didn't change at all, and that the ADDRESS of
+  our procedure is passed using the @ operator.
+
+  The advantage of linking the screen data into the .EXE is obvious:
+  You don't need any support files in order to run the program. In
+  addition, you have the luxury of referring to your screen by name
+  (MenuData). There are several disadvantages to this approach,
+  however. Every time you modify the screen data file, you must
+  re-convert it to an .OBJ file and recompile MYPROG. In addition, you
+  would have to have a separate .OBJ file (and external procedure) for
+  each screen you want to display.
+
+  BINOBJ is especially useful when the binary file you wish to link in
+  is fairly stable. One of the sample graphics programs uses BINOBJ to
+  build two units that contain the driver and font files. Refer to the
+  comment at the beginning of GRLINK.PAS on Disk III, and to the
+  discussion of RegisterBGIdriver and RegisterBGIfont in GRAPH.DOC.
+

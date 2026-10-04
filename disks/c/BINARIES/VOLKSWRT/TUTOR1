@@ -1,0 +1,449 @@
+                                  (R)
+                        VOLKSWRITER   3   TUTORIAL 
+
+                            Part 1 - The Basics
+
+Welcome to the Volkswriter 3 tutorials.  We have provided these tutorials to
+help you learn the pleasures of working with Volkswriter 3 quickly and
+easily.
+
+If you are experienced with personal computers, we suggest that you at least
+skim through these tutorials for general information about Volkswriter 3.
+You can also print the tutorial files, so you can refer to them later.
+
+If you are familiar with earlier versions of Volkswriter or Volkswriter
+Deluxe, refer to the "FEATURES" file on the same disk as this tutorial, and
+to the separate instruction sheet with your manual.
+
+We are nearing the bottom of the screen now.  Here is how to see more...
+
+..LAYOUT 2  
+   =>  Find the key marked PgDn near the right edge of your keyboard, and
+       press it once very briefly.  If the number "3" appears, press the Num
+       Lock key once, and then press PgDn again.
+
+..LAYOUT 1  
+Whenever you are approaching the bottom of the screen, press PgDn to see
+more text.
+
+It is not necessary for you to go through the tutorials from beginning to
+end, all at once.  You might want to start with the first two tutorials, and
+then learn how to print in TUTOR4.  Or perhaps you will need the spelling
+capability described in TUTOR5.  Feel free to use the tutorials any way that
+suits your work needs.
+
+Here are the tutorials and their subjects:
+
+..LAYOUT 3  
+       TUTOR1    The Basics
+       TUTOR2    Editing Functions
+       TUTOR3    Layouts
+       TUTOR4    Printing
+       TUTOR5    Spelling, Math, and Sorting
+
+..LAYOUT 1  
+And here are the "basics" in this tutorial:
+
+..LAYOUT 3  
+       STARTING OUT                  page 3
+       MOVING AROUND                 page 4
+       ENTERING TEXT                 page 5
+       MAKING CORRECTIONS            page 6
+       GETTING THERE FASTER          page 7
+       REFORMATTING PARAGRAPHS       page 9
+       INDENTING                     page 10
+       TO EXIT THE FIRST TUTORIAL    page 11
+
+..LAYOUT 1  
+(You can see the current page number on the "status line" at the very bottom
+of your screen.  It is identified by the letter "P" for "page.")
+
+
+
+NOTE:  We use boldface and other on-screen special effects throughout these
+tutorials.  Be sure your display is adjusted so you can see them.  On a
+monochrome monitor the following sentence should be highlighted, and on a
+color monitor it is a different color.  If you have a monochrome monitor,
+adjust it until this sentence is highlighted.
+
+One way we use boldface is to identify instructions that you are to follow.
+Instructions look like the paragraph below, complete with an arrow ( => ) to
+point them out:
+
+..LAYOUT 2  
+   =>  When you come to instructions in boldface, like this paragraph, be
+       sure to read all the way through before you start the procedure.
+
+..LAYOUT 1  
+Now let's get started.  Enjoy the tutorials!  We think they will help you
+become an expert Volkswriter quickly and easily.
+
+
+..page
+
+                                STARTING OUT
+
+Notice the small blinking line on your screen.  It is called the CURSOR.
+The cursor points to the place on the screen where your writing or editing
+will occur.  So if you want to write some text at a particular place, or
+make a change in text that already exists, your first task is to move the
+cursor to the right place.
+
+You have already met one of the keys that helps you move around -- the PgDn
+key.  Here are a few other important keys for moving through text:
+
+..LAYOUT 4  
+   - The PgUp key is like PgDn, but moves you "up" to earlier text.
+
+   - The arrow keys near PgUp and PgDn let you move in smaller steps.
+
+
+..LAYOUT 2  
+   =>  Try moving the cursor around using the arrow keys.  Press each one
+       a few times.  Then press and hold down the Cursor-left arrow key.
+
+
+..LAYOUT 1  
+Notice what happens when you reach the top or bottom of the screen using
+Cursor-up or Cursor-down arrow keys.
+
+
+..LAYOUT 2  
+   =>  Move the cursor to the bottom of the screen, using the Cursor-down
+       arrow key.  When you reach the bottom, press the Cursor-down key a
+       few more times.  Then press and hold down the Cursor-down key and
+       watch the text.
+
+
+..LAYOUT 1  
+What you are seeing is new text that "scrolls" into view on the screen, as
+if it were mounted on a long roll.  The Cursor-up key works in the same way,
+allowing you to scroll upward to earlier text.
+
+
+..page
+
+                               MOVING AROUND
+
+Here are some other keys that help you move around in this tutorial and in
+your own documents:
+
+
+..LAYOUT 2  
+   =>  (Remember, read all of these instructions before you begin following
+       them.)  Try moving ahead to the end of this tutorial using Ctrl-PgDn.
+       Hold down the Ctrl key and then press PgDn.  Each time you do this,
+       you are advanced to the top of the next page.
+
+..LAYOUT 3  
+       Then come back here using Ctrl-PgUp and PgUp.  Look for the title
+       "MOVING AROUND" at the top of this page to find your way back here.
+
+..LAYOUT 1  
+
+The top of each page you reached with Ctrl-PgDn and Ctrl-PgUp was displayed
+in the middle of your screen.  This lets you see the end of one page and the
+first part of the next page.
+
+Instead of having to find a title to get back to this page, it is more
+convenient for you to keep track of your place by checking the "status line"
+at the very bottom of the screen.  The page number is next to the letter "P"
+on the far right.  "L" and "C" show you the line and column number of the
+cursor's position on that page.
+
+The bottom of each page is marked by a line or reverse video.
+
+..LAYOUT 2  
+
+   =>  Find the page-break line below and move the cursor up and down across
+       it.  Notice that both the page number and line number change on the
+       status line as you move from one page to the next.
+
+
+..page
+..LAYOUT 1  
+
+                               ENTERING TEXT
+
+Now you try typing some text.  Don't worry if you make a mistake while
+typing.  You can use the Backspace key to delete the wrong characters and
+retype.  Backspace is above the Enter key, marked with an arrow  <--  .
+
+
+..LAYOUT 2  
+   =>  Place the cursor on the first blank line below, and start typing some
+       text (for example, retype this paragraph).  As you reach the right
+       margin, continue typing, and let Volkswriter take care of adjusting
+       the line ending for you.
+..LAYOUT 1  
+
+
+
+
+
+
+
+What you have just seen is "word wrap."  Volkswriter watches your line
+length as you type, and "wraps" the text down to the next line when you
+reach the margin.  So you never need to think about line length as you type.
+Instead, make it a habit to press the Enter key (also called Return) when
+you reach the end of a paragraph.  This indicates that the line or lines you
+have just entered should remain separate from other paragraphs.
+
+
+..page
+
+                             MAKING CORRECTIONS
+
+One of the nicest things about a word processor is that you can begin
+writing without worrying about being letter-perfect, and then you can edit
+later to get it just right.  Let's see how easy it is.
+
+Before you start the exercise below, look at the cursor:  it should be a
+blinking horizontal line.  If it is a small blinking square instead, press
+the key marked Ins on the lower right of your keyboard (press it once,
+briefly).
+
+
+           This setnence contains two mistaks....
+
+..LAYOUT 2  
+   =>  Move the cursor to "t" in "setnence" above.  Type the letters "nt" to
+       correct the word.
+
+   =>  Move the cursor to last letter of "mistaks," where you need to insert
+       the letter "e".  Press the Ins key once, so the cursor becomes a
+       small blinking square.  You have now turned on Insert mode.  With the
+       cursor under the "s" type the letter "e" so the word reads
+       "mistakes".
+
+   =>  Move the cursor under the "m" of "mistakes," and type the word
+       "spelling " (include the space after the word).
+
+   =>  Finally, move the cursor under the first period and press the key
+       marked Del three times, to delete the extra periods.
+
+
+..LAYOUT 1  
+These are a few of the ways of correcting text.  If you want to continue
+experimenting, use the text above.
+
+You now know two methods for deleting characters -- using the Backspace key
+or the Delete key.  Both methods will continue deleting characters very
+rapidly if you hold down the key.
+
+Notice the difference between correcting with Backspace when Insert is on
+and when it is off.  With Insert on, characters to the right of the cursor
+move back with it when you press the Backspace key.  When Insert is off,
+they do not move.  Try it!
+
+And, by the way . . . the Volkswriter 3 spelling program would have found
+both of the mistakes in the sample paragraph.  We'll try spelling correction
+in another tutorial.
+
+
+..page
+
+                            GETTING THERE FASTER
+
+There are faster ways to move to a specific place where you want to add text
+or correct it.
+
+
+..LAYOUT 2  
+   =>  Move the cursor to this line.  Hold the Ctrl key down and press the
+       Cursor-right key two or three times.  Watch as the cursor moves to
+       the right, one word at a time.
+
+..LAYOUT 3  
+       Then try holding Ctrl-Cursor-right down instead of just pressing it
+       and see what happens.  After the cursor reaches the last word in the
+       line, it jumps down to the next line.
+
+       Now try the same thing with the Ctrl key and the Cursor-left.  The
+       cursor moves left a word at a time, jumping up a line when it reaches
+       the left of the screen.
+
+
+..LAYOUT 1  
+For large moves in a document, the Home key is used to "amplify" the effect
+of the arrow keys.
+
+
+..LAYOUT 2  
+   =>  Try pressing the Home key (press and release this key, don't hold it
+       down).  Then press Cursor-up. The cursor moves to the top of the
+       screen while remaining in the same column.
+
+..LAYOUT 3  
+       Now try the Home - Cursor-down combination (again, press and release
+       the Home key, then press Cursor-down).  The cursor jumps to the
+       bottom of the screen.  Home - Cursor-left moves the cursor to the
+       beginning of the line; Home - Cursor-right moves it to the end.
+
+
+..LAYOUT 1  
+Home - Home (i.e., pressing Home twice) moves the cursor to the top line of
+the screen, at the current left margin.  Pressing Home a third time (Home -
+Home - Home) moves the cursor to the first line of the first page.  Home
+- End takes you to the last line of the last page.
+
+
+If you press Home by mistake, don't worry.  Pressing any key other than
+those listed cancels the Home key.
+
+..LAYOUT 2  
+   =>  Check the status line to note your place, so you can return here
+       easily.  Now experiment with the Home key combinations, and other
+       movement keys shown in the following chart.  Try it.
+
+
+..LAYOUT 1  
+..page
+
+Here is a summary of the control keys (you can also find this list in your
+manual, for reference):
+
+
+       Hold down      and press        Cursor moves to:
+       ---------      -------          ---------------------------
+       Ctrl           Cursor-right     Beginning of next word
+       Ctrl           Cursor-left      Beginning of previous word
+       Ctrl           Home             First line of first page
+       Ctrl           End              Last line of last page
+       Ctrl           PgUp             Preceding page top 
+       Ctrl           PgDn             Top of following page
+
+       Press         followed by       Cursor moves to:
+       ----          -----------       ---------------------------
+       Home           Home             Upper left of screen
+       Home           Home Home        First line of first page
+       Home           End              Last line of last page
+       Home           Cursor-up        Top of screen, same column
+       Home           Cursor-down      Bottom of screen, same column
+       Home           Cursor-left      Beginning of line
+       Home           Cursor-right     End of line
+       Home           PgUp             Up one screen (24 lines)
+       Home           PgDn             Down one screen (24 lines)
+
+       End                             Lower left corner of screen
+
+
+There's one more key you will find useful for moving:  the F3 function key.
+Each time you press F3, the cursor will move to Column 1, or to the right
+end of the line.  Try it....
+
+
+..page
+
+                          REFORMATTING PARAGRAPHS
+
+Let's find out more about what makes a word processor more than just a
+typewriter with a TV screen.  Use the sample paragraph below for practice.
+
+..LAYOUT 2  
+
+   =>  Scroll down, using the cursor-down key, until the sample paragraph
+       below is at the top of your screen.
+
+
+..LAYOUT 1  
+"It is helpful to compare word processing functions to conventional office
+activities.  Typing still requires a keyboard.  Retrieving and storing are
+simply electronic ways of going to a file drawer, pulling out a folder and
+working with pages of text, and then returning the folder to the drawer."
+
+
+..LAYOUT 2  
+   =>  Move your cursor to the "h" of "helpful" in the first line of the
+       paragraph above.  Turn on Insert mode by pressing the Ins key once if
+       necessary.  (Remember, the large cursor indicates that Insert is on.)
+       Then type the word "sometimes " including the space.  You'll see the
+       line break automatically when you push it past the right margin.
+
+   =>  Now watch what happens when you move the cursor.  Press the
+       Cursor-right key once and watch the paragraph reform.
+
+..LAYOUT 3  
+       (If the paragraph does not reform, press Ctrl-F1 to go to the
+       Preference Menu, and press R, so Automatic Reformatting indicates
+       Yes.  Press U to use the preferences you have now set.  Then try
+       again.)
+
+
+..LAYOUT 1  
+A paragraph will automatically be reformatted any time you make a change
+that affects line length.  The automatic reformatting occurs when you move
+the cursor or start an editing function.  Automatic reformatting stops at
+the end of the paragraph - which you mark by pressing Enter, remember? - or
+it stops when it reaches a blank line.
+
+Any time you need to reformat a paragraph manually, press the F8 function
+key.
+
+
+..page
+
+                                 INDENTING
+
+Here is our sample paragraph again:
+
+"It is helpful to compare word processing functions to conventional office
+activities.  Typing still requires a keyboard.  Retrieving and storing are
+simply electronic ways of going to a file drawer, pulling out a folder and
+working with pages of text, and then returning the folder to the drawer."
+
+
+..LAYOUT 2  
+   =>  Move your cursor to the beginning  "  at the start of the paragraph
+       above.  Turn on Insert by pressing the Ins key once if necessary.
+       Then press the Tab key once, and move the cursor to trigger automatic
+       reformatting.
+
+..LAYOUT 1  
+You now have an indented first line on the paragraph, where previously the
+first line was flush left.  We'll soon see how easy it is to have the first
+line of all your paragraphs indented for you automatically.
+
+
+..page
+
+                         TO EXIT THE FIRST TUTORIAL
+
+
+Before we leave, a word on storing files.  Until a document has been
+"stored" on a disk using the S option in the Main Menu, none of the changes
+or additions you have made are permanent.  In other words, all changes or
+new writing exist only in the computer's memory.  You must store the changes
+on disk before you turn off your computer, or they will be lost.
+
+Volkswriter 3 reminds you of the hazard if you try to do anything that can
+cause your changes to be lost.
+
+However, DO NOT STORE THESE TUTORIALS when you are prompted, or all your
+deletions and experimentations will become permanent.  The original tutorial
+files should remain intact on disk so you can refer to them again or print
+them.
+
+You have finished the first tutorial.  Here's how to exit, and, if you are
+ready, continue with the next tutorial:
+
+..LAYOUT 2  
+   =>  Exit to the Main Menu by pressing Alt-F10  (hold down the Alt key and
+       press the F10 key briefly).
+
+..LAYOUT 3  
+       Retrieve the file called TUTOR2, using the Revise command.  Answer
+       "Y" when asked if you want to retrieve another document without
+       Storing this one.
+
+
+..LAYOUT 1  
+See you in the next Tutorial!
+LAYOUT 000
+â   B 
+          <   ?   P   ú \--+---+---+------------+---------+---------+---------+---------+---@------/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      $B 
+          <   ?   P   ú ---#---\---+------------+---------+---------+---------+---------+---@------/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      $B 
+          <   ?   P   ú ---+---\---+------------+---------+---------+---------+---------+---@------/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      $B 
+          <   ?   P   ú ---#-\-+---+------------+---------+---------+---------+---------+---@------/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                        $B
+ <

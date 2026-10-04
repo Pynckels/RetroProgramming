@@ -1,0 +1,488 @@
+                   A Short Introduction to Volkswriter 3
+
+
+
+This document will introduce you to some of the highlights of Volkswriter 3:
+spelling verification, automatic hyphenation, document layout capabilities,
+math, and sorting.  Most of these examples are drawn from the tutorials,
+where you will find more detailed instructions.
+
+
+                                  SPELLING
+
+The Volkswriter 3 spelling program is the most powerful on the market today.
+Not only does it have the largest dictionary (170,000 words), it's also the
+fastest and - as you'll soon see - the easiest to use.
+
+You can use Volkswriter's powerful spelling program at any time while you
+are writing or editing.  F2 is the spelling key.  To use it:
+
+..LAYOUT 4  
+   Press F2 once to check the spelling of a single word,
+
+   Press F2 twice to check the spelling of a section of text or your entire
+     document.
+
+   Or you can mark a block with the F5 and F6 block markers, and then check
+     spelling of the block by pressing F2 once.
+
+..LAYOUT 1  
+
+Here is a sample paragraph that is full of typical typing and spelling
+errors:
+..LAYOUT 3  
+
+       It is helpful to compair word processing function to conventional
+       office activities.  Typing still requires a keyboard,and retreiving
+       and storing are simply electronic ways of going to to a file drawer,
+       pulling out a folder and working with pages of text, and then storing
+       the file for safkeeping. HOwever, you will find that there are some
+       concepts and functions you have not seen in a conventionl office.
+       There are also some special keys, such as PgUp, that you won't find
+       on your typewriter.
+
+..LAYOUT 1  
+
+..page
+
+Now let's look at the errors one by one, and see what the spelling program
+offers for improving the paragraph.
+..LAYOUT 2  
+
+   =>  Place the cursor on this line.  Press F2 twice to check the spelling
+       of the words that appear below, which are taken from the sample para
+       graph.  The instructions beside each one suggest what to do when the
+       Spelling Menu appears.  Use the F10 key to stop spelling verification
+       at the message below.
+
+
+..LAYOUT 5  
+   compair         try the "S" option.  Then press "1" to automatically
+                   insert the correct word from the list into the text.
+
+   keyboard,and    a space omitted.  Choose "B" to fix the problem.
+
+   retreiving      Not sure how to spell it?  Try "S" again.
+
+   to to           words accidentally repeated.  The prompt asks if you want
+                   to delete one of them; reply "Y", and one will be whisked
+                   away!
+
+   safkeeping      a simple typo.  This time, try the "R" option, and type
+                   the correct spelling (safekeeping).  When you press
+                   Enter, the word will be replaced.
+
+   HOwever         a capitalization error.  Press "C" to correct it.
+
+   conventionl     for this typo, try the "T" option.  The cursor will be
+                   placed in the text area, and you can use Insert mode to
+                   add the "a" to correct the word.
+
+   PgUp            A special word.  You can select "A" to accept the word
+                   and add it to a temporary dictionary.  Or you can use "U"
+                   for Update, to add the word to your personal on-disk dic
+                   tionary, so it will be recognized in all your future
+                   editing sessions.
+
+
+   PRESS F10 TO STOP SPELLING AT THIS LINE
+..LAYOUT 1  
+
+
+The spelling program can also correct abbreviations (try Mrs.), and recog
+nizes many proper nouns, such as city names (Chicago), abbreviations (CA,
+Feb.), and important business names (Monsanto, Chevron).  Reformatting and
+re-hyphenation occur automatically when errors are corrected.
+
+
+
+
+..page
+
+                           AUTOMATIC HYPHENATION
+
+
+Volkswriter 3's automatic hyphenation is just that -- truly automatic.  It
+won't interrupt you asking you to specify or confirm where a hyphen should
+go.  As long as you have this option turned on, every reformatting causes
+re-hyphenation as well.
+
+Automatic hyphenation uses a special dictionary to insert "soft hyphens" at
+the correct place in words that cross the right margin.  Soft hyphens are
+automatically removed if reformatting moves the word away from the right
+margin.
+
+The paragraph below was formatted using narrow margins.  Note where the soft
+hyphens () are, and watch them disappear when we reformat it.
+
+..LAYOUT 2  
+   =>  Place your cursor on the first line of the paragraph below and press
+       F8 to reformat it.
+..LAYOUT 1  
+
+..LAYOUT 7  
+           If you have not used a word processor before, you
+           are in for a treat.  After a short time using Volks
+           writer 3, you will wonder how you ever managed with
+           out it.
+
+..LAYOUT 1  
+You will see soft hyphens inserted in your text automatically as you type.
+Of course, automatic hyphenation must be set to "Y" in the Preferences Menu
+(Ctrl-F1 takes you to the Preferences Menu).
+
+
+..page
+                                  LAYOUTS
+
+
+The powerful layout features of Volkswriter 3 make it easy for you to give
+your documents exactly the look you want.  You can now change tab and margin
+settings, use permanent indents and outdents, change line spacing and char
+acter width - anywhere in your document.  All layout specifications are
+automatically stored with your document, so you do not have to remember to
+save them.  You can have up to 15 different layouts in one document, and
+change from one to another by simply indicating which one you want.
+
+You can see the effect of using different layouts in this document.
+
+..LAYOUT 2  
+   =>  Move the cursor to this line.  Now look at the ruler line, at the
+       bottom of your screen, and the line that begins "Layout: 2".  This
+       tells you that this paragraph is in Layout number 2.
+
+..LAYOUT 1  
+(You should see the ruler line at the bottom of your screen, just above the
+status line.  If you do not, use Ctrl-F1 to go to the Preferences Menu, and
+the L option to show the ruler line.)
+
+..LAYOUT 2  
+   =>  Now press the cursor-down key to move down to this line.  As you do,
+       watch the layout change back to Layout 1, for the paragraph above,
+       and then change to Layout 2 when you get to this paragraph.
+
+..LAYOUT 1  
+The layout information line tells you some of the most important options
+that can change from one layout to another.
+
+
+
+CHANGING LAYOUT:
+
+
+..LAYOUT 2  
+   =>  Move the cursor to the first line of the sample paragraph below. Note
+       from the ruler line that it is in Layout 1.  Then change it to Layout
+       3, with these steps:
+
+   Press F9 to go to the Layout Menu.
+
+   Press the N (Next Layout) key twice to go to Layout 3.
+
+   Press F9 to install Layout 3.
+
+..LAYOUT 1  
+
+Sample paragraph: "It is helpful to compare word processing function to con
+ventional office activities.  Typing still requires a keyboard, and retriev
+ing and storing are simply electronic ways of going to a file drawer, pull
+ing out a folder and working with pages of text, and then storing the file
+for safekeeping.  However, you will find that there are some concepts and
+functions you have not seen in a conventional office."
+
+..LAYOUT 2  
+   =>  Now, with the cursor still on the first line of the paragraph above,
+       press F8 to reformat the paragraph using the new layout you have
+       installed.
+
+..LAYOUT 1  
+
+Note these important facts about layouts:  The layout you installed, Layout
+3, will go into effect starting on the line where you had the cursor when
+you first pressed F9.  It will continue to be in effect for all text that
+follows, until the next layout change.
+
+
+CREATING A NEW LAYOUT:
+
+Instead of selecting a defined layout, as you just did above, you can change
+one of the specific options, such as the position of tabs and margins.  When
+you do, a new layout will automatically be defined, so you can select it
+easily anywhere else you want to use it.  Let's try it.
+
+..LAYOUT 2  
+   =>  Move your cursor to first line of the space below.  Press F9 to go to
+       the Layout Menu.  Select S, to change line spacing.  Type the number
+       2 for double space, and press Enter.  Finally, press F9 to install
+       the change you have just made.  You have now created a new layout!
+
+..LAYOUT 3  
+       Now type a few lines.  Note that the line counter on the status line
+       increases by two each time you move to another line.  Your text will
+       also be displayed in double spacing on the screen, if that option is
+       turned on in the Preference Menu (Ctrl-F1).
+..LAYOUT 1  
+
+
+
+
+
+
+
+You create a new layout any time you make a change in the Layout Menu, other
+than just selecting an existing layout.  Here's the big benefit -- you can
+then just select the new layout by number any time you want to use it in
+your document.
+
+
+..LAYOUT 8  
+      For this paragraph, we have used the # symbol on the ruler line. Press
+   F9 and then T for Tabs and Margins Menu.  You will see the # symbol and
+   others in the menu of choices.  The # symbol always determines the left
+   margin for the first line of a paragraph.  So it makes the first line of
+   this paragraph indented.
+
+..LAYOUT 4  
+   þ The # symbol can also be used for an "outdented" first line like this
+     one.  The "bullet" is outside the left margin used for the text of the
+     paragraph.
+
+..LAYOUT 1  
+If you have a set of layouts you use frequently, you can save them as a
+"style sheet."  This style sheet will automatically be in effect when you
+create new documents with a particular extension.  For example, you might
+want a style sheet to be used whenever you create a document with the exten
+sion .LTR.
+
+..page
+
+                               MATH FUNCTIONS
+
+
+A great deal of business writing requires mathematical calculations - bud
+gets, expense reports, sales forecasts, and so on.  Volkswriter 3's math
+features let you make the necessary calculations in your document, right
+where they are needed, without a spreadsheet or other separate software.
+Volkswriter 3 can add, subtract, multiply, divide, compute percentages and
+subtotals, and use constants, on one or more rows or columns.  It can even
+do crossfooting, adding down columns and across rows simultaneously.
+
+Try Volkswriter's math functions with the examples that follow.  All math
+procedures involve a few simple steps:  use Ctrl-F5 and Ctrl-F6 to mark the
+column(s) or row(s), including operators.  Then press Ctrl-F9 and select the
+math function.
+
+
+
+Column Math
+
+..LAYOUT 2  
+   =>  In the example, place the cursor on the 8 of 875.00 below and then
+       press Ctrl-F5.  Then move the cursor to the closing parenthesis of
+       (95.20) and press Ctrl-F6.  Note that marked block includes the par
+       entheses around the last number.  These parentheses indicate that
+       this number must be subtracted.
+
+..LAYOUT 3  
+       Once the block is marked, move your cursor to the line below the
+       column. (The cursor must be directly below the marked block.)  Press
+       Ctrl-F9, and select Column Math from the menu.
+
+
+..LAYOUT 6  
+                        INCOME
+
+                  Sales        875.00
+                  Rental       310.70 
+                  Other         78.80 
+
+                  Refund       (95.20)
+
+
+
+..LAYOUT 1  
+The result is inserted on the line where you place the cursor, aligned with
+the other numbers in the marked block.
+
+
+..page
+
+Mixed operations:
+
+..LAYOUT 2  
+   =>  In this example, be sure to include the operators (the -, =, and /
+       symbols) in your marked block.  Then place the cursor on the Earnings
+       per share line, and watch as the Gross profit and Earnings per share
+       are computed for you when you invoke the Column Math function:
+
+..LAYOUT 6  
+
+                 Sales                      48,633.00
+                 Expenses                -  37,109.00 
+                 Gross profit            =  
+
+                 Number of shares        /   4,800
+
+                 Earnings per share            
+
+
+..LAYOUT 1  
+..page
+
+Multiple Columns:
+
+
+..LAYOUT 2  
+   =>  Mark the entire group of columns below.  Then place the cursor on the
+       TOTAL line.  Press Ctrl-F9, and select Column Math.
+
+
+..LAYOUT 6  
+
+                              Expenses
+
+             MON       TUES      WED      THURS      FRI
+Hotel       92.00     92.00     95.50     95.50     95.50
+Meals       47.50     39.00     58.10     40.50     45.75
+Cabs        22.00               16.50      9.00     28.00
+Entertain.           104.75    125.95     77.80     65.00
+           ------    ------    ------    ------    ------
+  TOTAL
+
+
+
+
+..page
+..LAYOUT 1  
+
+                                Decimal Tabs
+
+Volkswriter 3 supports the use of decimal tabs, although they are not
+required to perform math.  We have already set decimal tabs to make it easy
+for you to try entering columns like those above.  Just tab to each column,
+and enter the number you want.
+
+..LAYOUT 2  
+   =>  Try entering numbers using decimal tabs.  With the cursor on the line
+       below the days, tab to each column and enter a dollar amount. When
+       you have entered several lines of numbers, you can mark them and per
+       form Column Math.
+
+
+..LAYOUT 6  
+             MON       TUES      WED      THURS      FRI
+
+
+
+..page
+
+..LAYOUT 1  
+Multiple Rows
+
+Mathematics works horizontally (rows) as well as vertically (columns).
+
+..LAYOUT 2  
+   =>  Mark the entire block of numbers below.  Then place the cursor under
+       TOTAL to the right, in the column where you want the decimal point of
+       the results.  Press Ctrl-F9, and select Math.
+
+..LAYOUT 6  
+
+                              Expenses
+
+             MON       TUES      WED      THURS      FRI      TOTAL
+
+Hotel       92.00     92.00     95.50     95.50     95.50
+Meals       47.50     39.00     58.10     40.50     45.75
+Cabs        22.00       .00     16.50      9.00     28.00
+Entertain.           104.75    125.95     77.80     65.00
+
+
+
+..page
+
+..LAYOUT 1  
+                              "Cross Footing"
+
+Cross footing means adding across rows and down columns simultaneously.
+
+..LAYOUT 2  
+   =>  Mark the group of columns below.  Place the cursor below and to the
+       right of the columns.  The cursor should be on the line where you
+       want the column totals, and in the decimal position you want for the
+       row totals.  Then select cross footing from the Math menu.
+
+..LAYOUT 6  
+
+                              Expenses
+
+             MON       TUES      WED      THURS      FRI      TOTAL
+
+Hotel       92.00     92.00     95.50     95.50     95.50
+Meals       47.50     39.00     58.10     40.50     45.75
+Cabs        22.00       .00     16.50      9.00     28.00
+Entertain.           104.75    125.95     77.80     65.00
+           ------    ------    ------    ------    ------
+  TOTAL
+
+                                                                ^
+                                                      cursor here
+
+..LAYOUT 1  
+
+..page
+
+
+                                  SORTING
+
+
+Volkswriter 3's sorting function can be used anywhere in a document.  Or it
+can be used to sort a mailing list (such as those used with TextMerge), as
+long as the "fields" are lined up in columns.
+
+Let's try sorting a short list of names and telephone numbers with Volks
+writer 3.  Sorting affects whole lines, so you can mark one part ("field")
+within a line, and the lines will be sorted in order.
+
+..LAYOUT 2  
+   =>  Mark the last names below as a column.  To do this, place the cursor
+       under the "W" of "Watson" in the first line, and press Ctrl-F5.  Then
+       place the cursor at least two spaces after the "n" of Samson in the
+       last line, so all last names will be within the block.  Press
+       Ctrl-F6.  Then press Ctrl-F9, and select A - Ascending sort.
+
+
+..LAYOUT 3  
+       James       Watson               409 338-4242 (home)
+       Catherine   Harrison             318 993-7475
+       Harry       Hopeful              818 449-5757
+       Constance   Malone               212 444-8765 (answering machine)
+       Jonathan    Wallace              818 234 5678
+       William     Barton               409 345-6789
+       James       Bailey               212 888-3456
+       Susan       Samson               318 335-4774
+
+
+..LAYOUT 1  
+If you want, you can repeat the procedure, but mark the column of Area Codes
+instead of last names.  On a mailing list, or a list used with Volkswriter's
+TextMerge, you might sort by zip code.  See the manual for details.
+
+
+..page
+
+                                 CONCLUSION
+
+
+This has been a brief introduction to some of the powerful new features of
+Volkswriter 3.
+
+For more details, retrieve the file TUTOR1, which will introduce the tutori
+als.  The subjects included in this file are covered in more depth in the
+tutorials, and many other features of Volkswriter 3 are discussed there as
+well.
+
+Those of you who have used earlier versions of Volkswriter should also
+review the file called FEATURES.
+LAYOUT 000
+Â	   B P          <   ?   P   ú \--+---+---+------------+---------+---------+---------+---------+----------/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      B P          <   ?   P   ú ---#---\---+------------+---------+---------+---------+---------+--------@-/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      B P          <   ?   P   ú ---+---\---+------------+---------+---------+---------+---------+--------@-/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      B P          <   ?   P   ú ---#-\-+---+------------+---------+---------+---------+---------+--------@-/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      B P          <   ?   P   ú ---#-------+-------\----+---------+---------+---------+---------+--------@-/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      B P           <   ?   P   ú \-------------.---------.---------.---------.---------.---------.----------/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      B P          <   ?   P   ú -----------\------------+---------+---------+---------+---------+---@------/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                      B P          <   ?   P   ú ---\--#----+------------+---------+---------+---------+---------+--------@-/--------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+---------+----                        B P           <   ?   P   ú -----------\----------

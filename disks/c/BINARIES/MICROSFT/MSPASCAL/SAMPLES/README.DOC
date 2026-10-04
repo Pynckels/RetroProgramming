@@ -1,0 +1,1407 @@
+				README.DOC
+	      (C) Copyright Microsoft(R) Corporation, 1987, 1988
+		    Microsoft Pascal Compiler Version 4.00
+
+
+This file contains information about Version 4.0 of the Microsoft
+Pascal compiler, libraries, and utilities.  Microsoft updates its
+documentation when it is reprinted, so you may find that some of the
+information in this on-line file has already been included in your
+manuals.
+
+
+				  NOTE
+
+Current information about low-level implementation details can be
+found in the Microsoft Mixed-Language Programming Guide and the Microsoft
+CodeView(R) and Utilities manual.  These manuals take precedence over
+sections in older manuals.
+
+
+			REPORTING COMPILER PROBLEMS
+
+When reporting problems with the compiler, please first reduce the
+program causing the problem to the smallest program that causes the
+error.	Also, please provide Microsoft Corporation with the following
+information to help in tracking down the problem:
+
+*   The compiler version number (from the logo that appears on the screen
+    when you invoke the compiler using the PL command).
+
+*   The version of DOS you are running (use the DOS VER command).
+
+*   Your system configuration (which machine, total memory, total free
+    memory at compiler execution time).
+
+*   The command line used in the compilation.
+
+*   All object files/libraries used to link, if necessary.  You need not
+    provide standard object files/libraries, but please state which ones
+    you are using.
+
+Providing this information will help us solve your problem quickly.
+
+
+
+			      GENERAL NOTES
+
+SETUP
+-----
+Using the SETUP program is optional.  You may want to copy the compiler
+files to your disk and use the MAKELIB program on the Pascal Library 1
+Disk (rather than SETUP) to create the required libraries.
+
+If you set up for dual-mode operation, remember that you must
+use either the /Lr (real mode) or /Lp (protected mode) switch
+on the PL command line.
+
+You can use the SETUP program to create additional libraries by using
+the /L option.	When you run SETUP with the /L option, SETUP only
+takes you through the questions required to create a library.
+
+
+OS/2 Systems Support
+--------------------
+PASCAL 4.0 now supports OS/2.  The compiler runs under both OS/2 and DOS,
+and applications may be linked to run under either OS/2 or DOS. You
+may bind an OS/2 program so it runs under either protected-mode OS/2 or
+real-mode OS/2 and DOS.  Chapter 2 of the update tells you how to set
+up for both operating systems.	Creating both protected-mode and bound
+programs is described in Chapter 3, "OS/2 Systems Support," of the
+update.
+
+
+Floating-Point Operations under PC-DOS 3.2
+---------------------------------------
+If you are running under IBM(R) Personal Computer DOS (PC-DOS) Version
+3.20 and trapping floating-point exceptions in your program, you may
+need to patch PC-DOS 3.20 to get proper operation when floating-point
+exceptions occur.  For instructions about making this patch, please refer
+to the file named README.DOC in the \PATCH32 subdirectory on the STARTUP
+distribution disk.
+
+
+Floating-Point Operations under MS-DOS 3.2
+------------------------------------------
+This information is important only if your system has ALL of the following
+characteristics:
+
+    1.	You use Microsoft DOS (MS-DOS) version 3.20.
+    2.	You boot from a hard disk drive.
+    3.	Your system has a math coprocessor (for instance, an 8087 chip).
+    4.	You run programs that use floating-point math.
+
+For systems that satisfy all of the preceding conditions, you may be able to
+eliminate floating-point math problems by installing a small patch in DOS. If
+you are not sure whether you need the patch, perform the following steps:
+
+    1.	Copy the program PATCH87.EXE (included on the distribution disks)
+	to the root directory of your hard disk drive.
+
+    2.	Reboot your system from the hard disk and DO NOT PERFORM ANY FLOPPY-
+	DISK OPERATIONS after rebooting. It is very important that you avoid
+	floppy-disk I/O after rebooting, since that will affect the reliability
+	of the diagnostic test that you are about to perform.
+
+    3.	If necessary, use the CD command to move to the root directory of your
+	hard disk drive.
+
+    4.	Run the PATCH87.EXE program by entering this command at the DOS prompt:
+
+	    PATCH87
+
+    5.	The program performs a diagnostic test on your system to determine
+	whether it needs the DOS patch, and, if the patch is needed,
+	whether it can be performed successfully. If the program tells you
+	that you need to install the DOS patch, and that it can be done,
+	follow the procedure described in the next section.
+
+    NOTE: The floating-point problem has been eliminated in versions of
+    MS-DOS higher than 3.20. This includes MS-DOS versions 3.21 and 3.30.
+
+If you performed the preceding test and determined that you should install the
+DOS patch on your system, perform the following steps:
+
+    1.	Format a blank floppy disk. (Do NOT use the /s formatting option to
+	transfer system files to the disk.)
+
+    2.	Use the SYS command to copy IO.SYS and MSDOS.SYS from the root
+	directory of your hard disk to the new floppy disk. For instance, if
+	you boot from drive C:, you would enter the following commands:
+
+	    C:
+	    SYS A:
+
+    3.	Use the COPY command to copy COMMAND.COM and SYS.COM to the same
+	floppy disk.
+
+    4.	Use the COPY command to copy the program PATCH87.EXE (included in this
+	release) to the same floppy disk.
+
+    5.	Change the current drive and directory to the floppy disk, by entering
+	the following command:
+
+	    A:
+
+    7.	Install the DOS patch by entering the following command:
+
+	    PATCH87 /F
+
+	WARNING: If you experience any disk errors during steps 2 through 7,
+	do NOT proceed with step 8. Reboot from your hard disk and repeat the
+	entire process.
+
+    8.	If you have not experienced any errors, use the SYS command to transfer
+	the files IO.SYS and MSDOS.SYS from the floppy disk back to your hard
+	disk. For instance, if the boot directory of your system is the root
+	directory of drive C:, you would enter the following command at the DOS
+	prompt:
+
+	    A:
+	    SYS C:
+
+    9.	The DOS patch has been installed. Reboot the system.
+
+
+Setting Error Level
+-------------------
+The PL driver includes a switch, /w, that sets the error-return
+threshold at which PL stops execution. For example, the following command
+line compiles AVERAGES.PAS with an error return threshold of 1 (the
+colon (:) is optional):
+
+PL /w:1 AVERAGES.PAS
+
+Compiler warning errors are in the range 1-3.  Compiler hard
+errors are greater than 3.  If the compiler returns an error
+GREATER than the threshold you specify, PL terminates.	The default
+level is 3.  That is, PL terminates only for hard errors, not warnings.
+The previous example causes PL to terminate if there is a warning
+message.
+
+
+File Names under OS/2
+---------------------
+Although DOS ignores any characters beyond the first eight in file
+and path names, OS/2 does not and instead reports an error.  If you
+are using old batch or make files for OS/2 development, you may need
+to modify the files so that only eight characters and an extension
+are used in file and path names.
+
+
+INCLUDE
+-------
+By default, PL looks for include files in the directory specified
+by the INCLUDE environment variable. You must set this variable:
+SETUP does not create a default setting in the NEW-VARS.BAT file.
+
+
+Stack Size
+----------
+Pascal programs compiled for use under OS/2 have 256 fewer bytes
+allocated to the stack.  The 256 bytes are reserved to provide for
+OS/2's additional stack use.
+
+
+LMULOK
+------
+Results calculated when an overflow occurs (LMULOK returns FALSE) may
+be inaccurate because the calculation halts when the overflow is
+detected.
+
+
+$rom Metacommand
+----------------
+The $rom metacommand generates an error when used with a VALUE
+section.
+
+
+Making OS/2 Function Calls
+--------------------------
+Pascal Version 4.0 includes header files containing function,
+procedure, and data declarations for OS/2 function calls.  The
+demonstration program SORTDEMO.PAS shows a use of the header files and
+contains numerous examples of OS/2 function calls.  The main header file
+is OS2.INT, which in turn uses several other header files.  See the
+PACKING.LST file for the location of the header files and of the
+SORTDEMO.PAS program.
+
+Your program only needs to include the OS2.INT file:  OS2.INT
+automatically includes the other files.
+
+By defining specific constants you can include some or all of the
+various declarations.  These constants are described at the beginning
+of each header file.  For example, the following fragment would include
+only the KBD and VIO definitions:
+
+
+CONST
+	INCL_KBD = 1;
+	INCL_VIO = 1;
+	INCL_NOCOM = 1;  (* Do not include default declarations. *)
+
+(* $include:'os2.int' *)
+
+
+The names in the header files match the names used in the OS/2
+manuals.  See the MS OS/2 1.0 Programmer's Reference for detailed
+information about each function.
+
+Because the Pascal run-time routines are not reentrant, OS/2 functions
+involving multiple threads or requiring reentrancy cannot be safely
+called from Pascal without extensive additional programming.  (You may
+write your own reentrant libraries, or you may use semaphores to control
+library access--these are both advanced techniques which Microsoft does
+not support.) Definitions for these functions are included for completeness
+and for the advanced programmer. The OS/2 functions that use multiple
+threads or require reentrancy include the following:
+
+DOSCREATETHREAD
+DOSRESUMETHREAD
+DOSSUSPENDTHREAD
+DOSSETSIGHANDLER
+DOSSETVEC
+DOSMONOPEN
+DOSMONCLOSE
+DOSMONREAD
+DOSMONWRITE
+DOSMONREG
+
+
+New Error Message
+-----------------
+
+380 - Stack or var with SS <> DS
+
+An attempt is being made to address a stack variable with adr or ^ when
+$windows+ or $stackseg+ is set. These metacommands make SS not equal
+to DS so short addresses (adr or ^) cannot completely reference stack
+variable parameters.
+
+
+
+			NOTE FOR WINDOWS DEVELOPERS
+
+The STACK segment is no longer defined in object files produced by
+the Pascal compiler.  It has also been removed from all of the run-time
+modules except ENTX6L.
+
+This was done to facilitate user declaration of stack size for Windows.
+
+The STACK segment is defined in the module ENTX6L for MS-DOS and
+5ENTX6L for OS/2.
+
+SETUP builds a library containing (5)ENTX6L (non-Windows) or (5)ENTX6W
+(Windows).
+
+Applications linking with the Pascal library containing (5)ENTX6W in place
+of (5)ENTX6L must specify stack size with the /STACK: link switch or in a
+.DEF file.  (If this is not done, the application will get a zero size stack).
+
+If your Windows programs use the emulator library (LIBPASE.LIB), you
+need to make a modified version of PASLIBW.LIB using updated versions
+of WIN87EM.EXE and WIN87EM.LIB. Call Microsoft Product Support to get
+the updated files. To create the modified library, use the LIB utility
+by typing the following command:
+
+	lib paslibw-noemstar+win87em.lib,,paslibwe.lib
+
+This command creates a library, PASLIBWE.LIB, to use instead of
+PASLIBW.LIB for applications linking with the emulator library,
+LIBPASE.LIB.
+
+
+			  CORRECTIONS TO THE UPDATE
+
+p.  8	In Section 1.5.2, \PWORK should be \WORK.
+
+p.  9	If you use SETUP to install Pascal in a subdirectory, SETUP
+	places the files mentioned in Section 1.5.3, "Environment
+	Variable and Configuration Files," in the WORK directory
+	under the specified subdirectory.
+
+p. 16	The line reading
+		@PROG=PL /Lr AVERAGES.PAS
+	should read
+		PL /Lr AVERAGES.PAS
+
+p. 53	The correct name of the LVARSTK.OBJ file mentioned in
+	Section 6.4.3 is LVARSTCK.OBJ.
+
+p. 63	The use of "module" in Section 7.3, "Program Module,"
+	is misleading. Windows development using multiple
+	Pascal source files requires the use of units, not
+	modules. Pascal units generate the implementation and
+	interface code required under Windows; modules do not.
+	See pp. 300-311, "Units," in the Pascal Language
+	Reference Manual for information about Pascal units.
+
+
+			NOTES ON CODEVIEW AND UTILITIES
+
+				The Mouse Driver
+
+If you will be using the Microsoft Mouse with the Microsoft CodeView debugger
+you must have Version 6.0 or later of the Microsoft Mouse. If you do not,
+use the version of the MOUSE.COM driver provided in this package.  Copy
+MOUSE.COM to the appropriate mouse directory. When you are ready to use the
+mouse, type
+
+	mouse
+
+at the DOS command level. If you want to install the mouse driver automatically
+every time you reboot,	insert the "mouse" command in your AUTOEXEC.BAT file.
+
+Note that in earlier releases of Microsoft C, both the MOUSE.SYS and the
+MOUSE.COM driver were provided.  If you have been using an earlier version
+of the MOUSE.SYS driver, delete the following line from your CONFIG.SYS file:
+
+	device=\<directory>\mouse.sys
+
+where <directory> is the directory where the earlier mouse driver resides.
+
+
+		      Microsoft CodeView Debugger
+
+New Command-Line Option
+-----------------------
+If you have an IBM Personal System/2, then you can use the /50
+command-line option to start the CodeView debugger in 50-line mode.
+Note that you must be in 25-line mode to effectively use either the
+/43 or /50 command-line option.
+
+CONFIG.SYS Setting for CVP
+--------------------------
+To run the protected-mode CodeView debugger (CVP.EXE), you must have
+the following line in your CONFIG.SYS or CONFIG.OS2 file:
+
+	IOPL=YES
+
+
+Using the 7 Command in Protected Mode
+-------------------------------------
+If you are using OS/2 protected mode and have a math coprocessor, then
+you need to use a patch before you can use the CVP 7 command.  To apply
+the patch, use the OS2PATCH.EXE and PTRACE87.PAT files that come on the
+same disk that CVP.EXE is on.  You also need to locate the PATCH.EXE file
+that comes with OS/2 and make sure that this file is in a directory listed
+in your PATH environment variable.  Then follow these steps:
+
+1) Change the current drive and directory to the root directory of the
+   boot disk.  (If the boot disk is a floppy, make sure it is inserted
+   in the drive you used to boot from.)
+
+2) Give the following command line at the DOS prompt:
+
+   OS2PATCH /A PTRACE87.PAT
+
+Note that you may need to give the complete path names for the
+OS2PATCH.EXE and for the PTRACE87.PAT file.  You do not need to give
+a path name for the OS2PATCH.EXE file if you have placed this file
+in a directory listed in your PATH environment variable.
+
+Using the Real-Mode Debugger in the Compatibility Box
+-----------------------------------------------------
+When running the real-mode CodeView debugger in the DOS 3.x
+compatibility box, start the debugger with the /S command-line
+option.  Otherwise, the mouse pointer will not appear.
+
+Using the CodeView Debugger with BIND
+-------------------------------------
+The real-mode CodeView debugger cannot debug bound (dual-mode)
+applications.  However, the protected-mode CodeView debugger,
+CVP, can debug bound applications.
+
+Stack Trace Command
+-------------------
+In order for the Stack Trace command (or the Calls menu) to work
+reliably, you need to execute to at least the beginning of the main
+function or procedure, and the current module should have full CodeView
+information (a module has full CodeView information if compiled or
+assembled with /Zi).
+
+Error Messages
+--------------
+The error message "? cannot display" indicates that the Display
+Expression command (?) has been passed a valid symbol that it
+cannot display. In previous versions of the debugger, structures and
+records could not be displayed. With current version of the debugger,
+only enumerated types cannot be displayed.
+
+The error message "Expression not a memory address" occurs when
+the Tracepoint command is given without a symbol that evaluates to
+a single memory address.  For example, the commands "TP?1" and
+"TP?a+b" each produce this error message.  The proper way to put a
+tracepoint on the word at address 1 is with the command "TPW 1".
+
+The error message "Function call before 'main'" occurs when you
+attempt to evaluate a program-defined function before you have entered
+the main function.  Execute to at least to the beginning of the main
+function before attempting to evaluate program-defined functions.
+
+The error message "Bad emulator info" occurs when CodeView cannot
+read data from the floating-point emulator.
+
+The error message "Floating point not loaded" has a special meaning
+for CVP (in addition to the explanation given in the CodeView and
+Utilities manual).  Each thread has its own floating-point emulator.
+This message is issued when the current thread has not initialized
+its own emulator.
+
+Microsoft Pascal Programs
+-------------------------
+The Pascal example on pg. 61 of the Microsoft CodeView and Utilities
+manual should read
+
+	PAS1 /Zz TEST;
+
+rather than
+
+	PAS1 /Zi TEST;
+
+			     Exit Codes for Utilities
+
+The exit codes for LINK and the utilities in the Microsoft CodeView
+and Utilities manual should appear as follows:
+
+LINK
+----
+	Code	Meaning
+
+	0	No error.
+
+	2	Program error--something was wrong with the commands
+		or files input to the linker.
+
+	4	System error.  The linker
+
+		- ran out of space on output files
+		- was unable to reopen the temporary file
+		- experienced an internal error
+		- was interrupted by the user
+
+LIB, EXEPACK, EXEMOD, MAKE, and SETENV
+---------------------------------------
+	Code	Meaning
+
+	0	No error.
+
+	2	Program error--something was wrong with the commands
+		or files input to the utility.
+
+	4	System error.  The utility ran out of memory, was
+		interrupted by the user, or experienced an internal
+		error.
+
+
+		    Microsoft Segmented-Executable Linker (LINK)
+
+Overlay Restrictions
+--------------------
+You cannot use long jumps (using the longjmp library function) or indirect
+calls (through a function pointer) to pass control to an overlay.  When a
+function is called through a pointer, the called function must be in the same
+overlay or in the root.
+
+Changed LINK Error Messages
+---------------------------
+The explanation for fatal-error message L1008 is changed as follows:
+
+	The /SEGMENTS option specified a limit greater than 3072 on the
+	number of segments allowed.
+
+Error message L1009 has been changed to read as follows:
+
+	L1009	<number> : CPARMAXALLOC : illegal value
+
+Error message L1053 has been changed to read as follows:
+
+	L1053	out of memory for symbol table
+
+	The program had more symbolic information (such as public, external,
+	segment, group, class, and file names) than the amount that could fit
+	in  available real memory.
+
+	Try freeing memory by linking from the DOS command level instead of
+	from a MAKE file or from an editor. Otherwise, combine modules or
+	segments and try to eliminate as many public symbols as possible.
+
+Warning message L4050 has been changed as follows:
+
+	L4050	too many public symbols for sorting
+
+	The linker uses the stack and all available memory in the
+	near heap to sort public symbols for the /MAP option.  If
+	the number of public symbols exceeds the space available
+	for them, this warning is issued, and the symbols are not
+	sorted in the map file but are listed in arbitrary order.
+
+New LINK Error Messages
+-----------------------
+L1003	/QUICKLIB, /EXEPACK incompatible
+
+You cannot link with both the /QU option and the /E option.
+
+L1006	<option-text>: stack size exceeds 65535 bytes
+
+The value given as a parameter to the /STACKSIZE option exceeds the
+maximum allowed.
+
+L1063	out of memory for CodeView information
+
+The linker was given too many object files with debug information,
+and the linker ran out of space to store it.  Reduce the number
+of object files that have debug information.
+
+L1115	/QUICKLIB, overlays incompatible
+
+You specified overlays and used the /QUICKLIB option.
+These cannot be used together.
+
+L2013	LIDATA record too large
+
+An LIDATA record contained more than 512 bytes.  This is
+probably a compiler error.
+
+L2024	<name>: special symbol already defined
+
+Your program defined a symbol name that is already used by the linker
+for one of its own low-level symbols.  (For example, the linker
+generates special symbols used in overlay support and other operations.)
+Choose another name for the symbol in order to avoid conflict.
+
+L2025	<segmentname>: segment with > 1 class name not allowed with /INC
+
+Your program defined a segment more than once, giving the segment
+different class names.	Different class names for the same segment
+are not allowed when you link with the /INCREMENTAL option.  Normally,
+this error should never appear unless you are programming with MASM.
+For example, if you give the two MASM statements
+
+_BSS segment 'BSS'
+
+and
+
+_BSS segment 'DATA'
+
+then the statements have the effect of declaring two distinct segments.
+ILINK does not support this situation, so it is disallowed when the
+/INCREMENTAL option is used.
+
+
+L2041	stack plus data exceed 64K
+
+The total of near data and requested stack size exceeds 64K,
+and the program will not run correctly.  Reduce the stack size.
+The linker only checks for this condition if /DOSSEG
+is enabled, which is done automatically in the library
+startup module.
+
+L2043	Quick Library support module missing
+
+When creating a Quick library, you did not link with the required
+QUICKLIB.OBJ module.
+
+L2044	<name> : symbol multiply defined, use /NOE
+
+The linker found what it interprets as a public-symbol
+redefinition, probably because you have redefined a symbol that
+is defined in a library.  Relink with the /NOEXTDICTIONARY
+(/NOE) option. If error L2025 results for the same symbol, then you
+have a genuine symbol-redefinition error.
+
+L4003	intersegment self-relative fixup at <offset> in segment <name>
+	pos: <offset> Record type: 9C target external '<name>'
+
+The linker found an intersegment self-relative fixup. This error
+may be caused by compiling a small-model program with the /NT
+option.
+
+L4034	more than 239 overlay segments; extra put in root
+
+Your program designated more than the limit of 239 segments to
+go in overlays.  Starting with the 234th segment, they are assigned to
+the root (that is, the permanently resident portion of the program).
+
+
+		Microsoft Library Manager (LIB)
+
+New Option
+----------
+There is a new option for LIB:	/NOIGNORECASE (abbreviated as /NOI).
+This option tells LIB to not ignore case when comparing symbols.
+names. By default, LIB ignores case.  Multiple symbols that are
+the same except for case can be put in the same library.  An
+example of this is: "_Open" and "_open". Normally you could not
+add both these symbols to the same library.
+
+Note that if a library is built with /NOI, the library is
+internally "marked" to indicate /NOI.  All libraries built
+with earlier versions of LIB are not marked.
+
+If you combine multiple libraries, and any one of them is
+marked /NOI, then /NOI is assumed for the output library.
+
+In addition, LIB also supports the option /IGNORECASE (/I), which
+is completely analogous to /NOIGNORECASE.  /I is the default. The only
+reason to use it would be if you have an existing library marked /NOI
+that you wanted to combine with other libraries which were not marked,
+and have the output library be not marked. If you don't use
+/IGNORECASE, the output is marked /NOI (see above).
+
+Changed LIB Error Messages
+--------------------------
+Warning messages U4152, U4155, and U4157-U4159 for LIB are now
+nonfatal error messages U2152, U2155, and U2157-U2159, respectively.
+
+Warning message U4151 has been changed to read as follows:
+
+	U4151	'<name>' : symbol defined in module <name>, redefinition ignored
+
+New LIB Error Messages
+----------------------
+The following new warning messages have been added for LIB:
+
+U4155	<modulename> : module not in library
+
+A module specified to be replaced does not already exist in the
+library.  LIB adds the module anyway.
+
+U4157	insufficient memory, extended dictionary not created
+U4158	internal error, extended dictionary not created
+
+For the reason indicated, LIB could not create an extended
+dictionary. The library is still valid, but the linker
+is not able to take advantage of the extended dictionary
+to speed linking.
+
+
+		Microsoft Program Maintenance Utility (MAKE)
+
+Minus Sign in Description File
+------------------------------
+The documentation is in error when it says that a minus sign at the
+beginning of a description block causes errors to be ignored (CodeView
+and Utilities manual, p. 311).	The minus sign cannot be used.
+
+New Error Message
+-----------------
+U1015: <file> : error redirection failed
+
+This error occurs if the /X option is given and error output cannot
+be redirected to the given file (for example, because the file
+is read-only).
+
+Inference Rules
+---------------
+You cannot have inference rules in both the TOOLS.INI and the description
+file that use both the same inextension and outextension.  For example, you
+cannot place the following inference rule in the TOOLS.INI file:
+
+	.c.obj:
+		cl /c /Zi /Od $*.c
+
+while also placing the following line in the description file:
+
+	.c.obj:
+		cl /Ot $*.c
+
+However, you may define the same macro in both the TOOLS.INI and the
+description file.  In such cases, the definition in the TOOLS.INI file
+takes precedence.  You may avoid this problem by copying the TOOLS.INI
+to the same directory as your make file and modifying the make
+section.
+
+Backslash (\) as Continuation Character
+---------------------------------------
+Note that MAKE considers a backslash immediately followed by a new-line
+character to be a continuation character.  When it finds this combination
+in a description file, MAKE concatenates the line immediately following
+the combination with the line where the combination appears.
+
+If you define a macro that ends in a backslash, make sure that you put a
+space after the terminating backslash.	For example, if you want to define
+macros for the path C:\SRC\BIN and C:\SRC\LIB, you must use the format
+illustrated below:
+
+	BINPATH=C:\SRC\BIN\<space><newline>
+	LIBPATH=C:\SRC\LIB\<space><newline>
+
+To illustrate the problems that can result if you do not put a space before the
+new-line character, assume that the macros above appear as shown below
+instead:
+
+	BINPATH=C:\SRC\BIN\<newline>
+	LIBPATH=C:\SRC\LIB\<newline>
+
+Because a new-line character appears immediately after the backslash at the end
+of the first macro, MAKE assumes that you are defining the single macro shown
+below:
+
+	BINPATH=C:\SRC\BIN\LIBPATH=C:\SRC\LIB\
+
+
+
+	    Microsoft STDERR Redirection Utility (ERROUT)
+
+The ERROUT utility does not accept batch files. To redirect standard-error
+output from a batch file, you must enter a command of the following form:
+
+	ERROUT COMMAND /c <batchcommand>
+
+If no /f option is given, then ERROUT redirects standard-error output to
+the standard-output device.
+
+
+			Mixed-Language Programming
+
+C Naming Conventions
+--------------------
+C recognizes the first 31 characters of a symbolic name.
+
+
+Pascal Function Fact
+--------------------
+
+The following line in the Pascal function Fact on pages 30, 44, and 57
+in the Mixed-Language Programming Guide is incorrect:
+
+		Fact := Fact * n;
+
+The line should read as follows:
+
+		Fact := result(Fact) * n;
+
+
+Accessing Parameters on the Stack
+---------------------------------
+In Section 6.1.5 of the Microsoft Mixed Languages Programming Guide, the
+instruction
+
+	mov	bx, [bp+6]
+
+loads the argument into the BX register rather than the BP register.
+
+Setting Up Calls to High-Level Languages
+----------------------------------------
+Section 6.6 of the Microsoft Mixed Languages Programming Guide gives in-
+structions for setting up a call to a high-level language from assembly
+language.  Before you execute a call to a BASIC, Pascal, or FORTRAN routine,
+remember to declare an additional parameter if the return value is noninteger.
+This additional parameter must contain the offset address of the return value,
+for which you must allocate room within the stack segment (normally DGROUP,
+the same as the default data segment).
+
+BASIC Return Values
+-------------------
+BASIC functions use the FORTRAN/Pascal conventions, rather than the C
+conventions, for receiving return values.
+
+Passing C Strings to BASIC
+--------------------------
+In Section 8.4.3 of the Microsoft Mixed Languages Programming Guide, in
+the example illustrating how C passes string arguments to BASIC functions,
+the sd_len field should be declared as shown below:
+
+	int sd_len
+
+BASIC Array Declarations
+------------------------
+The sample BASIC array declaration in Table 9.1 of the Microsoft
+Mixed Language Guide should read
+
+	DIM x(c-1, r-1)
+
+Linking with MASM Files
+-----------------------
+If you are linking C modules with modules created by the Microsoft Macro
+Assembler, either assemble the MASM modules with the /MX option to
+preserve case sensitivity in these modules; or, use the LINK command
+to link in a separate step, and do NOT specify the /NOI linker
+option.
+
+Linking Mixed-Language Programs
+-------------------------------
+This section explains how to link Microsoft C modules with modules created
+by other Microsoft languages.  The discussions assume that you are linking
+with the Microsoft Segmented-Executable Linker, LINK.  (This is the version
+of LINK provided with Version 5.10 of the Microsoft C Optimizing Compiler
+and this version of Pascal.)
+
+To link object modules created using the Microsoft C Optimizing Compiler,
+Version 5.10, with those created using the Microsoft FORTRAN Optimizing
+Compiler Version 4.00 or 4.01, you must create a special version of each
+of the FORTRAN libraries you intend to use. Create one FORTRAN library
+to correspond to each C library you are using; that is, create a FORTRAN
+library that supports the same memory-model/math-option combination as
+the corresponding C library. Be sure that you choose the "C compatibility"
+option when you build each FORTRAN library.
+
+Next, use the SETUP program provided with Microsoft C, Version 5.10, to
+create all the combined C 5.10 libraries that you will need.  SETUP creates
+a subdirectory named \MIXLANG under the C 5.10 base directory.
+
+Place the FORTRAN libraries you have created in this directory. Then make the
+\MIXLANG directory the current directory and run F4COMPAT, which brings the
+FORTRAN libraries up to date and makes them compatible with C 5.10.  F4COMPAT
+takes two arguments: one specifying the memory model and one specifying the
+floating-point-math package that the library supports. For example,
+
+	F4COMPAT L 7
+
+makes a C 5.10-compatible version of LLIBFOR7.LIB.
+
+Once the libraries are built, use the following LINK command line to
+link the appropriate C library with the FORTRAN library that you
+converted in the previous example:
+
+     LINK /NOE objs,,,LLIBC7.LIB LLIBFOR7.LIB;
+
+The LINK command lines for other memory models and floating-point math packages
+are similar.  Note that the C library must be given first on the command line.
+Specify the \MIXLANG subdirectory either in the LIB environment variable
+or on the LINK command line so that the linker can find the FORTRAN
+library. Use only large- and medium-model libraries.  Huge-model programs
+use large-model libraries.
+
+To link other combinations of language libraries, the BASIC libraries
+(either BCOM40 or BRUN40) should be listed first on the LINK command
+line, since the main program must be written in BASIC.	Otherwise,
+the C 5.1 library should be listed first. (Or, if you are using C 4.0
+with FORTRAN 4.0 or later, the FORTRAN library should be listed first.)
+For best results, using large-memory-model C is suggested.
+
+
+		       The BIND Utility
+
+Specifying Libraries
+--------------------
+You need to include DOSCALLS.LIB on the BIND command line. If
+DOSCALLS.LIB is not in the current directory, you must give the
+complete path name to DOSCALLS.LIB.
+
+BIND automatically searches for API.LIB by looking in directories
+listed in the LIB environment variable.  However, if API.LIB is
+specified on the command line, then BIND does not check the LIB
+environment variable; instead, you need to give the complete
+path name.
+
+For example, the following command line successfully uses BIND, if
+API.LIB is located in a directory listed in the LIB environment
+variable:
+
+BIND MYPROG.EXE \LIB\DOSCALLS.LIB
+
+Using BIND with Packed Files
+----------------------------
+The version of BIND released with this package does not work with
+files that have been linked with the /EXEPACK linker option.
+
+Running Bound Files with DOS 2.1
+--------------------------------
+A dual-mode executable file produced with BIND can be run in both
+DOS 3.x and DOS 2.x environments.  However, if you change the name
+of an executable file produced by BIND, then it will not run under
+DOS 2.1.
+
+
+		 The Microsoft Incremental Linker (ILINK)
+
+ILINK Fatal Error Messages
+--------------------------
+
+.sym seek error
+.sym read error
+
+	The .SYM file is corrupted.  Do a full link.  If the error
+	persists, contact Microsoft.
+
+.sym write error
+
+	The disk is full or the .SYM file already exists with the
+	READONLY attribute.
+
+map for segment <name> exceeds 64K
+
+	The symbolic information associated with the given segment
+	exceeds 64K bytes, which is more than ILINK can handle.
+
+can't ilink library <name>
+
+	You tried to incrementally link an altered library.
+	ILINK does not link .LIB files but only .OBJ files.
+	Use a full link instead.
+
+.obj close error
+
+	The operating system returned an error when ILINK attempted
+	to close one of the .OBJ files.  Do a full link.  If the error
+	persists, contact Microsoft.
+
+too many LNAMES in <modname>
+
+	An object module has more than 255 LNAME records.
+
+too many SEGDEFs in <modname>
+
+	The given object module has more than 100 SEGDEF records.
+
+too many GRPDEFs in <modname>
+
+	The given object module has more than 10 GRPDEF records.
+
+symbol <name> multiply defined
+
+	The given symbol is defined more than once.
+
+#3
+
+	Please report this error to Microsoft.
+
+Out of Memory
+
+	ILINK ran out of memory for processing the input.  If you
+	are running ILINK under MAKE, try running it from the shell.
+	Otherwise, do a full link.
+
+could not run exec
+
+	ILINK was unable to find the file EXEC.EXE, which should be
+	placed somewhere in the search path or in the current
+	directory.
+
+.exe file too big, change alignment
+
+	The segment sector alignment value in the .EXE file is too
+	small to express the size of one of the segments.  Do a full
+	link and increase the alignment value with the /ALIGNMENT
+	option to LINK.
+
+.ilk seek error
+
+	The .ILK file is corrupted.  Do a full link.  If the error
+	persists, contact Microsoft.
+
+Too many defined segments
+
+	ILINK has a limit of 255 defined segments, which are segments
+	defined in an object module as opposed to an executable segment.
+	Reduce the number of segments if you want to use ILINK.
+
+too many library files
+
+	ILINK has a limit of 32 runtime libraries (.LIB files).  Reduce
+	the number of libraries.
+
+too many modules
+
+	ILINK has a limit of 1204 modules in a program.  Reduce the
+	number of modules.
+
+.ilk write error
+
+	The disk is full, or else ILINK cannot write to the .SYM file
+	because a .SYM file currently exists and has the READONLY attribute.
+
+file <name> does not exist
+
+	ILINK was unable to open the given file.  The file named was
+	in the file list in the .ILK file.
+
+seek error on library
+
+	A .LIB file was corrupted.  Do a full link and check your .LIB
+	files.
+
+library close error
+
+	The operating system returned an error when ILINK attempted
+	to close one of the .LIB files.  Do a full link.  If the error
+	persists, contact Microsoft.
+
+error closing EXE file
+
+	The operating system returned an error when ILINK attempted
+	to close the .EXE file.  Do a full link.  If the error
+	persists, contact Microsoft.
+
+Invalid module reference <module>
+
+	The program makes a dynamic link reference to a dynamic link
+	module which is not represented in the .EXE file.
+
+could not update time on <filename>
+
+	The operating system returned an error when ILINK attempted
+	to update the time on the given file.  Possibly the file had
+	the READONLY attribute set.
+
+invalid flag <flag>
+only one -e command allowed
+
+	The ILINK command syntax is incorrect.
+
+User Abort
+
+	The user issued CTRL+C or CTRL+BREAK.
+
+file <name> write protected
+
+	The .EXE, .ILK, or .SYM file needed to be updated and has the
+	READONLY attribute.  Change attribute to READWRITE.
+
+file <name> missing
+
+	One of the .OBJ files specified on the command line is missing.
+
+file <name> invalid .OBJ format
+file <name> has invalid <recordtype> record
+
+	The given .OBJ file has an invalid format or one that is not
+	recognized by ILINK.  This may have been caused by a compiler
+	or assembler.
+
+file <module> was not full linked
+
+	An .OBJ file was specified as input to ILINK, which was not in
+	the list of files in the original full link.
+
+LOBYTE seg-relative fixups not supported
+
+	This error message should occur only with MASM files.  See the
+	Microsoft Macro Assembler 5.0 Programmer's Guide. This type of
+	object module is not supported by ILINK.
+
+<number> undefined symbols
+
+	The given number of symbols were referred to in fixups but
+	never publicly defined in the program.
+
+Incremental Violations
+----------------------
+These errors cause a full link to occur if the -e option is used and -i
+is not used, else they are fatal errors:
+
+symbol <name> deleted
+
+	A symbol was deleted from an incrementally-linked module.
+
+<modname> contains new SEGMENT
+
+	A segment was added to the program.
+
+<modname> contains changed segment <name>
+
+	The segment contribution (code or data which the module
+	contributes to a segment) changed for the given module: it
+	contributed to a segment it didn't previously contribute to,
+	or a contribution was removed.
+
+<modname>'s segment <name> grew too big
+
+	The given segment grew beyond the padding for the given module.
+
+<modname> contains new GROUP <name>
+
+	A new group was defined, via the GROUP directive in assembly
+	language or via the /ND C compiler option.
+
+<modname> redefines group <name> to include <name>
+
+	The members of the given group changed.
+
+symbol <name> changed
+
+	The given data symbol was moved.
+
+can't add new communal data symbol <name>
+
+	A new communal data symbol was added as an uninitialized variable
+	in C or with the COMM feature in MASM.
+
+communal variable <name> grew too big
+
+	The given communal variable changed size too much.
+
+invalid symbol type for <name>
+
+	A symbol which was previously code became data, or vice versa.
+
+too many COMDEFS
+too many EXTDEFS
+
+	The limit on the total of COMDEF records (communal data variables)
+	and EXTDEF records (external references) is 2000.
+
+invalid CodeView information in .EXE file
+
+	The CodeView information found is invalid.
+
+<name> contains new CodeView symbolic info
+
+	A module previously compiled without -Zi was compiled with -Zi.
+
+<name> contains new linnum info
+
+	A module previously compiled without -Zi or -Zd was compiled
+	with -Zi or -Zd.
+
+<name> contains new public CV info
+
+	New information on public-symbol addresses was added.
+
+invalid .exe file
+
+	The .EXE file is invalid.  Make sure you are using an up-to-date
+	linker.  If the error persists, contact Microsoft.
+
+invalid .ilk file
+.ilk read error
+.ilk seek error
+
+	The .ILK file is invalid.  Make sure you are using an up-to-date
+	linker.  If the error persists, contact Microsoft.
+
+.SYM/.ILK mismatch
+
+	The .SYM and .ILK files are out of sync.  Make sure you are using
+	an up-to-date linker.  If the error persists, contact Microsoft.
+
+<libname> has changed
+
+	The given library has changed.
+
+can't link 64K-length segments
+
+	ILINK cannot handle segments greater than 65,535 bytes long.
+
+can't link iterated segments
+
+	ILINK cannot handle programs linked with /EXEPACK.
+
+Entry table expansion not implemented
+
+	The program call tree changed in such a way that ILINK could
+	not handle it.
+
+file <name> does not exist
+
+	The .EXE, .SYM, or .ILK files are missing.
+
+<name> has changed
+
+	The given library module name has changed.
+
+ILINK Warning messages
+----------------------
+
+Fixup frame relative to an (as yet) undefined symbol - assuming ok
+
+	See documentation for LINK error messages L4001 and L4002,
+	in the Microsoft CodeView and Utilities manual.
+
+<name> contains TYPEDEFs - ignored
+<name> contains BLKDEFs - ignored
+
+	The .OBJ file contains records no longer supported by Microsoft
+	language compilers.
+
+old .EXE free information lost
+
+	The free list in the .EXE file has been corrupted.  The free
+	list keeps track of "holes" of free space in the EXE file.  These
+	holes are made available when segments are moved to new locations.
+
+file <name> has no useful contribution
+
+	The given module makes no contribution to any segment.
+
+Main entry point moved
+
+	The program starting address changed.  You may want to consider
+	doing a full link.
+
+
+
+			     Microsoft Editor
+
+Installing the Editor
+---------------------
+The Pascal SETUP program installs the Microsoft Editor on your hard
+disk if you request it during setup.
+
+Keystroke Configurations
+------------------------
+Some of the keystroke configurations listed in Table A.2 of the
+Microsoft Editor User's Guide may need to be changed.
+
+In the Quick/WordStar(R) configuration, the Sinsert function is assigned
+to ALT+INS, not CTRL+INS.
+
+In the BRIEF(R) configuration, the Plines function is assigned to ALT+D,
+and the Refresh function is assigned to CTRL+].
+
+In the EPSILON(TM) configuration, the Ppage function is assigned to PGDN,
+and the Sdelete function is assigned to DEL and CTRL+D.
+
+The Compile Function
+--------------------
+The commands
+
+	Arg streamarg Compile
+	Arg textarg Compile
+
+each use the command specified by the extmake:text switch.  The
+editor does not check the extension of the file name given as an
+argument, but instead uses the "text" extension.  The streamarg
+or textarg replaces a %s in the command.  These commands are typically
+used to invoke MAKE.
+
+The Setfile Function
+--------------------
+The commands that use Setfile, along with a streamarg or textarg,
+accept a variety of input: either the name of a file, a file name
+with a wild-card character (* or ?), the name of a directory, or the
+name of a disk drive.  File names can also include environment variables,
+such as $INIT.	If the streamarg or textarg is a directory name, then
+the editor changes the current directory.  If the argument is a drive
+name, then the editor changes the current drive.  Environment variables
+are translated into directories to be searched for a file.  For example,
+the following macro directs the editor to search the $INIT environment
+variable in order to find the tools.ini file:
+
+    tools.ini := Arg "$INIT:tools.ini" Setfile
+
+
+Entering Strings in Macros
+--------------------------
+When you enter a text argument directly, no characters have special
+meaning (except when the argument is interpreted as a regular
+expression).  However, when you enter text as part of a macro, then
+strings inside of quotes are interpreted according to the C string
+format.  This format uses a backslash followed by double quotes (\")
+to represent double quotes and it uses two backslashes (\\) to represent
+a single backslash.  Therefore, to find the next occurrence of the string
+
+    She wrote, "Here is a backslash: \ "
+
+you could use the following macro definition:
+
+    findit := Arg "She wrote, \"Here is a backslash: \\ \"" Psearch
+
+Note that to indicate a backslash for a regular expression that is
+also part of a macro definition, you must use four consecutive
+backslashes.
+
+
+Using Text Switches
+-------------------
+The text switches extmake and readonly each take a special
+kind of syntax that allows you to specify drive, file name,
+base name, or file extension. The syntax consists of the
+characters:
+
+%|<letters>F
+
+where <letters> consists of any of the following: "p" for path,
+"d" for drive, "f" for file base name, or "e" for file extension.
+For example, if you are editing the file c:\dir1\sample.c, and you
+make the following switch assignment:
+
+extmake:c cl /Fod:%|pfF %|dfeF
+
+then each time you give the command <Arg><Compile>, the editor
+performs the following system-level command:
+
+cl /Fod:\dir1\sample c:sample.c
+
+The expression "%s" is equivalent to "%|feF" except that the former
+only works once, whereas the latter can appear any number of times
+in the extmake switch assignment. The expression "%|F" is equivalent
+to "%|dpfeF".
+
+The Filetab Switch
+------------------
+The filetab switch is a numeric switch that determines how the
+editor translates tabs when loading a file into memory.  The value
+of the switch gives the number of spaces associated with each tab
+column.  For example, the setting "filetab:4" assumes a tab column
+every 4 positions on each line.  Every time the editor finds a tab
+character in a file, it loads the buffer with the number of spaces
+necessary to get to the next tab column.  Depending on the value of
+the entab switch, the editor also uses the filetab switch to determine
+how to convert spaces into tabs when writing to a file.  The default
+value of filetab is 8.
+
+Functions Callable by C Extensions
+----------------------------------
+
+The following list summarizes functions from the standard compact-
+memory-model library, which should work when called by a C-extension
+module.  (The technique of programming C extensions is presented in
+Chapter 8 of the Microsoft Editor User's Guide.)  The memory model
+of the extension is assumed to be /Asfu (small code pointers, far
+data pointers, and stack segment unequal to data segment).  This list
+uses the function categories from Chapter 4 of the Microsoft C
+Optimizing Compiler Run-Time Library Reference (Version 4.0
+or later.)
+
+Buffer Manipulation: All functions can be called.
+
+Character Classification and Conversion: All functions can be called.
+
+Data Conversion: All functions can be called except for
+
+     strtod()
+
+Directory Control: All functions can be called except for
+
+     getcwd()
+
+File Handling: All functions can be called.
+
+Low-Level I/O Routines: All functions can be called, but write()
+will not work in binary mode.
+
+Console and Port I/O: All functions can be called except for
+
+     cgets()
+     cprintf()
+     cscanf()
+
+Searching and Sorting: All functions can be called except for
+
+     qsort()
+
+String Manipulation: All functions can be called except for
+
+     strdup()
+
+BIOS Interface: All functions can be called.
+
+MS-DOS Interface: All functions can be called except for
+
+     int86()
+     int86x()
+
+Time: All functions can be called except for
+
+     ctime()
+     gmtime()
+     localtime()
+     utime()
+
+Miscellaneous: All functions can be called except for
+
+     assert()
+     getenv()
+     perror()
+     putenv()
+     _searchenv()
+
+
+Linking Extensions in Protected Mode
+--------------------------------------
+To link C extension modules in protected mode, link with the
+object file EXTHDRP.OBJ, instead of the real-mode header
+EXTHDR.OBJ.

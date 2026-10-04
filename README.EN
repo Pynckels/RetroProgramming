@@ -1,0 +1,37 @@
+dosbox-x Borland-Clipper-Microsoft
+==================================
+
+
+USEFUL LINKS
+------------
+
+* https://winworldpc.com/
+* https://archive.org
+
+
+INSTALLATION
+------------
+
+You can install dosbox-x by means of
+
+    sudo apt install dosbox-x
+
+Then unzip this zip file to your ~ directory
+
+
+CONFIGURATION
+-------------
+
+To configure the dosbox-x, you can edit the file
+
+    ./dosbox-x.conf
+
+
+STARTUP
+-------
+
+To start this retro programming dosbox: execute (run) the file
+
+    ./dosbox-x.sh
+
+This can be done from the command line interface (terminal) or from the file manager in the graphical user interface.

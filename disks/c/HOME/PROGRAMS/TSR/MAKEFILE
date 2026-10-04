@@ -1,0 +1,16 @@
+all: CALL255.EXE INT255.COM
+
+CALL255.EXE: CALL255.PAS
+    tpc CALL255.PAS
+
+INT255.COM: INT255.ASM
+    tasm INT255.ASM,,
+    tlink /t INT255.OBJ
+
+clean:
+    del CALL255.EXE
+    del INT255.COM
+    del INT255.LST
+    del INT255.MAP
+    del INT255.OBJ
+

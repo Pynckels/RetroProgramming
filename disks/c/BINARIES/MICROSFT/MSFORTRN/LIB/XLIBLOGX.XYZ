@@ -1,0 +1,140 @@
+***SETUP LIB LOG FILE***
+
+This file contains the output of the LIB utility
+
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFORE.LIB
+Library does not exist.  Create? (y/n) Y
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LIBH.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFOR.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFP.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\EM.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MGRAPHFP.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFOR1.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\GRAPHICS.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MCLIB1.LIB ;
+LIB : warning U4150: qcwindow : module redefinition ignored
+LIB : warning U4150: grfpinit : module redefinition ignored
+LIB : warning U4150: grwindow : module redefinition ignored
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFORE.LIB &
+Operations: -CVT.OBJ;
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFOR7.LIB
+Library does not exist.  Create? (y/n) Y
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LIBH.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFOR.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFP.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\87.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MGRAPHFP.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFOR1.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\GRAPHICS.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MCLIB1.LIB ;
+LIB : warning U4150: qcwindow : module redefinition ignored
+LIB : warning U4150: grfpinit : module redefinition ignored
+LIB : warning U4150: grwindow : module redefinition ignored
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFOR7.LIB &
+Operations: -CVT.OBJ;
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFORA.LIB
+Library does not exist.  Create? (y/n) Y
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LIBH.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFOR.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFA.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MGRAPHFA.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFOR1.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\GRAPHICS.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MCLIB1.LIB ;
+LIB : warning U4150: qcwindow : module redefinition ignored
+LIB : warning U4150: grfpinit : module redefinition ignored
+LIB : warning U4150: grwindow : module redefinition ignored
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\MLIBFORA.LIB &
+Operations: -FCCVT.OBJ;
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFORE.LIB
+Library does not exist.  Create? (y/n) Y
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LIBH.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFOR.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFP.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\EM.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MGRAPHFP.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFOR1.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\GRAPHICS.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LCLIB1.LIB ;
+LIB : warning U4150: qcwindow : module redefinition ignored
+LIB : warning U4150: grfpinit : module redefinition ignored
+LIB : warning U4150: grwindow : module redefinition ignored
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFORE.LIB &
+Operations: -CVT.OBJ;
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFOR7.LIB
+Library does not exist.  Create? (y/n) Y
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LIBH.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFOR.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFP.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\87.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MGRAPHFP.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFOR1.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\GRAPHICS.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LCLIB1.LIB ;
+LIB : warning U4150: qcwindow : module redefinition ignored
+LIB : warning U4150: grfpinit : module redefinition ignored
+LIB : warning U4150: grwindow : module redefinition ignored
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFOR7.LIB &
+Operations: -CVT.OBJ;
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFORA.LIB
+Library does not exist.  Create? (y/n) Y
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LIBH.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFOR.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFA.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\MGRAPHFA.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFOR1.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\GRAPHICS.LIB  &
+Operations: +C:\BINARIES\MICROSFT\MSFORTRN\LIB\LCLIB1.LIB ;
+LIB : warning U4150: qcwindow : module redefinition ignored
+LIB : warning U4150: grfpinit : module redefinition ignored
+LIB : warning U4150: grwindow : module redefinition ignored
+
+Microsoft (R) Library Manager  Version 3.18
+Copyright (C) Microsoft Corp 1983-1991.  All rights reserved.
+
+Library name: C:\BINARIES\MICROSFT\MSFORTRN\LIB\LLIBFORA.LIB &
+Operations: -FCCVT.OBJ;

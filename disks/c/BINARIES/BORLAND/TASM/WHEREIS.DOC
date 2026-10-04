@@ -1,0 +1,49 @@
+
+                          WHEREIS 1.0
+
+  WHEREIS is a utility that searches a disk for files that match
+  a user-supplied file specification. The utility performs a
+  recursive search through any subdirectories it finds during
+  its search.
+
+  To search an entire disk for a particular file specification,
+  you would execute WHEREIS like this:
+
+    whereis *.asm
+
+  This would search through the entire drive (the current drive)
+  and display each instance of a file matching the file
+  specification *.asm.
+
+  You can also provide an explicit drive specifier:
+
+    whereis a:\*.asm
+
+  This will search drive A: for all matching files.
+
+  If you don't want to search an entire disk, you can explicitly
+  define the path from which to start the recursive search. For
+  example,
+
+    whereis c:\borland\tasm\*.asm
+
+  will search for all files matching *.asm in the directory
+  c:\borland\tasm and any subdirectories below it.
+
+  You can halt execution of WHEREIS by pressing any key while
+  it's running.
+
+
+
+                    How to assemble WHEREIS
+
+  In order to assemble WHEREIS, execute the following command on the
+  DOS command line:
+
+    make -fwhereis
+
+  This will execute the command-line make utility MAKE.EXE and pass
+  it the make file WHEREIS.MAK. For instructions on assembling
+  specific modules in the WHEREIS program, see the comments at the
+  top of each module.
+

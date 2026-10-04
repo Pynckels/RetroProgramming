@@ -1,0 +1,10 @@
+all: hexdump.exe
+
+hexdump.exe: hexdump.c
+    tcc -mh hexdump.c
+
+clean:
+    del hexdump.exe
+    del hexdump.obj
+
+
