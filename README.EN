@@ -16,26 +16,15 @@ You can install dosbox-x by means of
 
     sudo apt install dosbox-x
 
-The `RetroProgramming` repository can be installed in your home directory (`~`) in either of the following ways.
+Then unzip this zip file to your ~ directory
 
-* Option 1: Clone the repository with Git
-
-    cd ~
-    git clone https://github.com/Pynckels/RetroProgramming.git
-    chmod +x ~/RetroProgramming/dosbox-x.sh
-
-* Option 2: Download and extract the repository as a ZIP file
-
-    unzip RetroProgramming-main.zip
-    mv RetroProgramming-main RetroProgramming
-    chmod +x ~/RetroProgramming/dosbox-x.sh
 
 CONFIGURATION
 -------------
 
 To configure the dosbox-x, you can edit the file
 
-    ~/RetroProgramming/dosbox-x.conf
+    ./dosbox-x.conf
 
 
 STARTUP
@@ -43,6 +32,63 @@ STARTUP
 
 To start this retro programming dosbox: execute (run) the file
 
-    ~/RetroProgramming/dosbox-x.sh
+    ./dosbox-x.sh
 
 This can be done from the command line interface (terminal) or from the file manager in the graphical user interface.
+
+
+Installed products
+------------------
+
+* Borland Turbo Assembler  1.0  1988
+* Borland Turbo Basic      1.1  1987
+* Borland Turbo C          2.0  1988
+* Borland Turbo Debugger   1.0  1988
+* Borland Turbo Pascal     3.0  1986
+* Borland Turbo Pascal     4.0  1987
+* Borland Turbo Pascal     5.0  1988
+* Borland Turbo Prolog     2.0  1988
+
+* Computer Associates Clipper       5.2  1987
+* Computer Associates Clipper Tools 3.0  19??
+
+* Microsoft Assembler  6.11  1993
+* Microsoft C          6.00  1990
+* Microsoft Cobol      5.00  1993
+* Microsoft Fortran    5.10  1991
+* Microsoft Pascal     4.00  1988
+* Microsoft QuickBasic 4.50  1988
+
+* Volkswriter III  1.0  1985
+* Wordperfect      5.1  1989
+
+
+Installed examples
+------------------
+
+HOME
+├── DOCUMENT
+│   └── HELLOWRL
+│       ├── VOLKSWRT
+│       └── WORDPERF
+└── PROGRAMS
+    ├── HELLOWRL
+    │   ├── CLIPPER
+    │   ├── MASM
+    │   ├── MSC
+    │   ├── MSCOBOL
+    │   ├── MSFORTRN
+    │   ├── MSPASCAL
+    │   ├── MSQBASIC
+    │   ├── TASM
+    │   ├── TBASIC
+    │   ├── TC
+    │   ├── TPASCAL
+    │   └── TPROLOG
+    ├── HEXDUMP
+    ├── MIXEDLAN
+    │   ├── C_ASM
+    │   ├── CLP_ASM
+    │   ├── COB_C
+    │   └── FOR_C
+    └── TSR
