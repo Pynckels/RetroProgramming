@@ -1,0 +1,9 @@
+To connect to DosBox-x COM1 from the Linux command
+line interface, execute the following program in a
+Linux terminal:
+
+socat -,rawer TCP:127.0.0.1:5000
+
+The DosBox-x program takes up the role of a serial
+server, the Linux program socat takes up the role
+of a serial client.
