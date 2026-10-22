@@ -26,6 +26,7 @@ To configure the dosbox-x, you can edit the file
 
     ./dosbox-x.conf
 
+Note that the definitions of COM1..COM9 and LPT1..LPT9 are for test purposes only (for the moment). To use the definition of LPT1, LPT2 and LPT3 the program prt1403 must be installed. This program is open source and can be found at https://github.com/Pynckels/prt1403
 
 STARTUP
 -------

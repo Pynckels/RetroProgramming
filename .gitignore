@@ -1,3 +1,10 @@
+# Directories
+
 /diskettes/
 /manuals/
+
+# Files
+
+/lpt/lpt*/*.pdf
+/lpt/lpt*/*.bin
 /dosbox-x.updated.conf
