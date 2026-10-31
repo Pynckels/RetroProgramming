@@ -25,7 +25,9 @@ CONFIGURATION
 Pour configurer dosbox-x, vous pouvez modifier le fichier suivant :
     ./dosbox-x.conf
 
-Notez que les définitions de COM1..COM9 et LPT1..LTP9 sont uniquement destinées aux tests (pour le moment). Pour utiliser les définitions de LPT1, LPT2 et LPT3 le programme prt1403 doit être installé. Ce programme est open source et peut être trouvé à l’adresse suivante : https://github.com/Pynckels/prt1403
+Notez que les définitions de COM1..COM9sont uniquement destinées aux tests (pour le moment).
+
+Pour utiliser les définitions de LPT1..LPT9 le programme prt1403 doit être installé. Ce programme est open source et peut être trouvé à l’adresse suivante : https://github.com/Pynckels/prt1403
 
 DÉMARRAGE
 ---------
@@ -70,25 +72,79 @@ HOME
 ├── DOCUMENT
 │   └── HELLOWRL
 │       ├── VOLKSWRT
+│       │   └── HELLOWRL.VW3
 │       └── WORDPERF
+│           └── HELLOWRL.WP5
 └── PROGRAMS
+    ├── EXAMPLES
+    │   ├── SERIAL
+    │   │   └── SERIAL.C
+    │   └── TSR
+    │       ├── CALL255.PAS
+    │       ├── INT255.ASM
+    │       └── MAKEFILE
     ├── HELLOWRL
     │   ├── CLIPPER
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.PRG
     │   ├── MASM
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.ASM
     │   ├── MSC
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.C
     │   ├── MSCOBOL
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.CBL
     │   ├── MSFORTRN
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.FOR
     │   ├── MSPASCAL
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.PAS
     │   ├── MSQBASIC
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.BAS
     │   ├── TASM
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.ASM
     │   ├── TBASIC
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.BAS
     │   ├── TC
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.C
     │   ├── TPASCAL
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.PAS
     │   └── TPROLOG
-    ├── HEXDUMP
+    │       ├── BUILD.BAT
+    │       └── HELLOWRL.PRO
     ├── MIXEDLAN
-    │   ├── C_ASM
     │   ├── CLP_ASM
+    │   │   ├── MAKEFILE
+    │   │   ├── TONE.ASM
+    │   │   └── TONEDEMO.PRG
     │   ├── COB_C
+    │   │   ├── CALLPARM
+    │   │   │   ├── CALLLIB.C
+    │   │   │   ├── CALLPROG.CBL
+    │   │   │   └── MAKEFILE
+    │   │   └── CRC32
+    │   │       ├── CRC32.C
+    │   │       ├── CRCDEMO.CBL
+    │   │       ├── CRCDEMO.DAT
+    │   │       └── MAKEFILE
+    │   ├── C_ASM
+    │   │   ├── EBC2ASC.C
+    │   │   ├── EBC2ASCA.ASM
+    │   │   ├── MAKEFILE
+    │   │   └── SAMPLE.EBC
     │   └── FOR_C
-    └── TSR
+    │       ├── KEYS.C
+    │       ├── KEYSDEMO.FOR
+    │       └── MAKEFILE
+    └── UTILITY
+        └── HEXDUMP
+            ├── HEXDUMP.C
+            └── MAKEFILE

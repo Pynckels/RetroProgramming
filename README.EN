@@ -26,7 +26,9 @@ To configure the dosbox-x, you can edit the file
 
     ./dosbox-x.conf
 
-Note that the definitions of COM1..COM9 and LPT1..LPT9 are for test purposes only (for the moment). To use the definition of LPT1, LPT2 and LPT3 the program prt1403 must be installed. This program is open source and can be found at https://github.com/Pynckels/prt1403
+Note that the definitions of COM1..COM9 are for test purposes only (for the moment).
+
+To use the definition of LPT1..LPT9 the program prt1403 must be installed. This program is open source and can be found at https://github.com/Pynckels/prt1403
 
 STARTUP
 -------
@@ -71,25 +73,79 @@ HOME
 ├── DOCUMENT
 │   └── HELLOWRL
 │       ├── VOLKSWRT
+│       │   └── HELLOWRL.VW3
 │       └── WORDPERF
+│           └── HELLOWRL.WP5
 └── PROGRAMS
+    ├── EXAMPLES
+    │   ├── SERIAL
+    │   │   └── SERIAL.C
+    │   └── TSR
+    │       ├── CALL255.PAS
+    │       ├── INT255.ASM
+    │       └── MAKEFILE
     ├── HELLOWRL
     │   ├── CLIPPER
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.PRG
     │   ├── MASM
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.ASM
     │   ├── MSC
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.C
     │   ├── MSCOBOL
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.CBL
     │   ├── MSFORTRN
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.FOR
     │   ├── MSPASCAL
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.PAS
     │   ├── MSQBASIC
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.BAS
     │   ├── TASM
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.ASM
     │   ├── TBASIC
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.BAS
     │   ├── TC
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.C
     │   ├── TPASCAL
+    │   │   ├── BUILD.BAT
+    │   │   └── HELLOWRL.PAS
     │   └── TPROLOG
-    ├── HEXDUMP
+    │       ├── BUILD.BAT
+    │       └── HELLOWRL.PRO
     ├── MIXEDLAN
-    │   ├── C_ASM
     │   ├── CLP_ASM
+    │   │   ├── MAKEFILE
+    │   │   ├── TONE.ASM
+    │   │   └── TONEDEMO.PRG
     │   ├── COB_C
+    │   │   ├── CALLPARM
+    │   │   │   ├── CALLLIB.C
+    │   │   │   ├── CALLPROG.CBL
+    │   │   │   └── MAKEFILE
+    │   │   └── CRC32
+    │   │       ├── CRC32.C
+    │   │       ├── CRCDEMO.CBL
+    │   │       ├── CRCDEMO.DAT
+    │   │       └── MAKEFILE
+    │   ├── C_ASM
+    │   │   ├── EBC2ASC.C
+    │   │   ├── EBC2ASCA.ASM
+    │   │   ├── MAKEFILE
+    │   │   └── SAMPLE.EBC
     │   └── FOR_C
-    └── TSR
+    │       ├── KEYS.C
+    │       ├── KEYSDEMO.FOR
+    │       └── MAKEFILE
+    └── UTILITY
+        └── HEXDUMP
+            ├── HEXDUMP.C
+            └── MAKEFILE
