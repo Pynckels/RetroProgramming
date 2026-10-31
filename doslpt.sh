@@ -1,6 +1,15 @@
 #! /usr/bin/bash
 
+# -------------------------------------------------------------------
+# Adjust the PRT1403 directory (dosbox-x does not use $PATH)
+# -------------------------------------------------------------------
+
+PRT1403="$HOME/.local/bin/prt1403"
+
+# -------------------------------------------------------------------
+
 DIR_SCRIPT="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd -P)"
+TIMESTAMP="$(date +%Y%m%d%H%M%S)"
 
 # -------------------------------------------------------------------
 # Usage message
@@ -17,7 +26,28 @@ usage() {
 }
 
 # -------------------------------------------------------------------
-# 2 or more parameters: stop
+# print file $1 to printer number $2
+# -------------------------------------------------------------------
+
+print_file() {
+    local lpt="$2"
+    local pdf="$DIR_SCRIPT/lpt/lpt$lpt/dosbox-x.lpt$lpt.$TIMESTAMP.pdf"
+    local in="$1"
+
+    case "$lpt" in
+        1) "$PRT1403" -c GREEN -d DMY -e -i LPT1 -j RETROPRG -o "$pdf" -s WIDE -u DOSBOX -y "$in" ;;
+        2) "$PRT1403" -c GREEN -n -o "$pdf" -s WIDE -y "$in" ;;
+        3) "$PRT1403" -c WHITE -n -o "$pdf" -s MEDIUM -y "$in" ;;
+        4) "$PRT1403" -c WHITE -n -o "$pdf" -s SMALL -y "$in" ;;
+        *) echo "Insert print command to print $1 on printer $2"
+           echo "All printers are silent... No LPT files found. Even the paperclip is unemployed!"
+           ;;
+    esac
+    rm -f "$in"
+}
+
+# -------------------------------------------------------------------
+# More or less than 1 parameter: exit with error
 # -------------------------------------------------------------------
 
 if [ "$#" -ne 1 ]; then
@@ -30,14 +60,16 @@ fi
 # -------------------------------------------------------------------
 
 case "$1" in
-	-c|--clean)
-		# Erase all files in $DIR_SCRIPT/lpt/lpt1 ... $DIR_SCRIPT/lpt/lpt9
-		for dir in "$DIR_SCRIPT"/lpt/lpt[1-9]; do
-			[ -d "$dir" ] || continue
-			find "$dir" -type f -delete
-		done
-		exit 0
-		;;
+
+    -c|--clean)
+		# Erase all bin and pdf files in $DIR_SCRIPT/lpt/lpt1 ... $DIR_SCRIPT/lpt/lpt9
+        for dir in "$DIR_SCRIPT"/lpt/lpt[1-9]; do
+            [ -d "$dir" ] || continue
+            find "$dir" -type f \( -iname '*.pdf' -o -iname '*.bin' \) -delete
+        done
+        exit 0
+        ;;
+
 	-o|--open)
 		# Open all pdf files in $DIR_SCRIPT/lpt/lpt1 ... $DIR_SCRIPT/lpt/lpt9
 		for dir in "$DIR_SCRIPT"/lpt/lpt[1-9]; do
@@ -49,106 +81,26 @@ case "$1" in
 		done
 		exit 0
 		;;
+
 	*)
-		if [ ! -f "$1" ]; then
-			usage
-			exit 1
-		fi
-		;;
+        # The only parameter should be an existing file: execute dosbox-x print logic
+        if [ ! -f "$1" ]; then
+            echo "File not found: $1" >&2
+            exit 1
+        fi
+
+        # Extract the port number from the file name, e.g. dosbox-x.lpt4.bin -> 4
+        name="${1##*/}"
+        lpt="${name#dosbox-x.lpt}"
+        lpt="${lpt%.bin}"
+
+        if [[ "$name" == dosbox-x.lpt*.bin && "$lpt" =~ ^[1-9]$ ]]; then
+            print_file "$1" "$lpt"
+            exit 0
+        else
+            echo "Unrecognized print file: $1" >&2
+            exit 1
+        fi
+        ;;
+
 esac
-
-# -------------------------------------------------------------------
-# 1 parameter is existing file: execute dosbox-x print logic
-# -------------------------------------------------------------------
-
-TIMESTAMP="$(date +%Y%m%d%H%M%S)"
-
-FILE_LPT1="$DIR_SCRIPT/lpt/lpt1/dosbox-x.lpt1.bin"
-FILE_PDF1="$DIR_SCRIPT/lpt/lpt1/dosbox-x.lpt1.$TIMESTAMP.pdf"
-
-FILE_LPT2="$DIR_SCRIPT/lpt/lpt2/dosbox-x.lpt2.bin"
-FILE_PDF2="$DIR_SCRIPT/lpt/lpt2/dosbox-x.lpt2.$TIMESTAMP.pdf"
-
-FILE_LPT3="$DIR_SCRIPT/lpt/lpt3/dosbox-x.lpt3.bin"
-FILE_PDF3="$DIR_SCRIPT/lpt/lpt3/dosbox-x.lpt3.$TIMESTAMP.pdf"
-
-FILE_LPT4="$DIR_SCRIPT/lpt/lpt4/dosbox-x.lpt4.bin"
-FILE_PDF4="$DIR_SCRIPT/lpt/lpt4/dosbox-x.lpt4.$TIMESTAMP.pdf"
-
-FILE_LPT5="$DIR_SCRIPT/lpt/lpt5/dosbox-x.lpt5.bin"
-FILE_PDF5="$DIR_SCRIPT/lpt/lpt5/dosbox-x.lpt5.$TIMESTAMP.pdf"
-
-FILE_LPT6="$DIR_SCRIPT/lpt/lpt6/dosbox-x.lpt6.bin"
-FILE_PDF6="$DIR_SCRIPT/lpt/lpt6/dosbox-x.lpt6.$TIMESTAMP.pdf"
-
-FILE_LPT7="$DIR_SCRIPT/lpt/lpt7/dosbox-x.lpt7.bin"
-FILE_PDF7="$DIR_SCRIPT/lpt/lpt7/dosbox-x.lpt7.$TIMESTAMP.pdf"
-
-FILE_LPT8="$DIR_SCRIPT/lpt/lpt8/dosbox-x.lpt8.bin"
-FILE_PDF8="$DIR_SCRIPT/lpt/lpt8/dosbox-x.lpt8.$TIMESTAMP.pdf"
-
-FILE_LPT9="$DIR_SCRIPT/lpt/lpt9/dosbox-x.lpt9.bin"
-FILE_PDF9="$DIR_SCRIPT/lpt/lpt9/dosbox-x.lpt9.$TIMESTAMP.pdf"
-
-PRT1403="$HOME/.local/bin/prt1403"
-
-# LPT1 : print 132 width with predefined header and with separator page
-
-if [[ -f "$FILE_LPT1" ]]; then
-    "$PRT1403" -c GREEN -d DMY -e -i LPT1 -j RETROPRG -o "$FILE_PDF1" -s WIDE -u DOSBOX -y "$FILE_LPT1"
-    rm "$FILE_LPT1"
-
-# LPT2 : print 132 width without header and without separator page
-
-elif [[ -f "$FILE_LPT2" ]]; then
-    "$PRT1403" -c GREEN -n -o "$FILE_PDF2" -s WIDE -y "$FILE_LPT2"
-    rm "$FILE_LPT2"
-
-# LPT3 : print 106 width without header and without separator page
-
-elif [[ -f "$FILE_LPT3" ]]; then
-    "$PRT1403" -c WHITE -n -o "$FILE_PDF3" -s MEDIUM -y "$FILE_LPT3"
-    rm "$FILE_LPT3"
-
-# LPT4 : print 80 width without header and without separator page
-
-elif [[ -f "$FILE_LPT4" ]]; then
-    "$PRT1403" -c WHITE -n -o "$FILE_PDF4" -s SMALL -y "$FILE_LPT4"
-    rm "$FILE_LPT4"
-
-# LPT5
-
-elif [[ -f "$FILE_LPT5" ]]; then
-    echo "Insert print command to print $FILE_LPT5"
-    rm "$FILE_LPT5"
-
-# LPT6
-
-elif [[ -f "$FILE_LPT6" ]]; then
-    echo "Insert print command to print $FILE_LPT6"
-    rm "$FILE_LPT6"
-
-# LPT7
-
-elif [[ -f "$FILE_LPT7" ]]; then
-    echo "Insert print command to print $FILE_LPT7"
-    rm "$FILE_LPT7"
-
-# LPT8
-
-elif [[ -f "$FILE_LPT8" ]]; then
-    echo "Insert print command to print $FILE_LPT8"
-    rm "$FILE_LPT8"
-
-# LPT9
-
-elif [[ -f "$FILE_LPT9" ]]; then
-    echo "Insert print command to print $FILE_LPT9"
-    rm "$FILE_LPT9"
-
-# Oops! This one slipped through the printer net...
-
-else
-    echo "All printers are silent... No LPT files found. Even the paperclip is unemployed!"
-
-fi
