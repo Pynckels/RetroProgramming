@@ -4,7 +4,15 @@
 # Adjust the PRT1403 directory (dosbox-x does not use $PATH)
 # -------------------------------------------------------------------
 
-PRT1403="$HOME/.local/bin/prt1403"
+PRT1403="$(command -v prt1403 2>/dev/null)"
+
+if [ -z "$PRT1403" ] && [ -x "$HOME/.local/bin/prt1403" ]; then
+    PRT1403="$HOME/.local/bin/prt1403"
+fi
+if [ -z "$PRT1403" ]; then
+    echo "LOG: doslpt.sh: prt1403 not found in PATH or in $HOME/.local/bin" >&2
+    exit 1
+fi
 
 # -------------------------------------------------------------------
 
@@ -42,8 +50,8 @@ print_file() {
         2) "$PRT1403" -c GREEN -n -o "$pdf" -s WIDE -y "$in" ;;
         3) "$PRT1403" -c WHITE -n -o "$pdf" -s MEDIUM -y "$in" ;;
         4) "$PRT1403" -c WHITE -n -o "$pdf" -s SMALL -y "$in" ;;
-        *) echo "Insert print command to print $1 on printer $2"
-           echo "All printers are silent... No LPT files found. Even the paperclip is unemployed!"
+        *) echo "LOG: doslpt.sh: Insert print command to print $1 on printer $2"
+           echo "LOG: doslpt.sh: All printers are silent... No LPT files found. Even the paperclip is unemployed!"
            ;;
     esac
     rm -f "$in"
@@ -88,7 +96,7 @@ case "$1" in
 	*)
         # The only parameter should be an existing file: execute dosbox-x print logic
         if [ ! -f "$1" ]; then
-            echo "File not found: $1" >&2
+            echo "LOG: doslpt.sh: File not found: $1" >&2
             exit 1
         fi
 
@@ -101,7 +109,7 @@ case "$1" in
             print_file "$1" "$lpt"
             exit 0
         else
-            echo "Unrecognized print file: $1" >&2
+            echo "LOG: doslpt.sh: Unrecognized print file '$name'. Expected a name like dosbox-x.lpt1.bin (port number 1-9)." >&2
             exit 1
         fi
         ;;
