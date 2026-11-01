@@ -6,6 +6,6 @@ FILE_CONF_UPDATED="$DIR_SCRIPT/dosbox-x.updated.conf"
 
 sed "s|~/retroprogramming|${DIR_SCRIPT%/}|g" "$FILE_CONF" > "$FILE_CONF_UPDATED"
 
-pushd "$DIR_SCRIPT"
-dosbox-x -conf "$FILE_CONF_UPDATED" -defaultdir "$DIR_SCRIPT" -nopromptfolder & disown
-popd
+pushd "$DIR_SCRIPT" > /dev/null
+dosbox-x -conf "$FILE_CONF_UPDATED" -defaultdir "$DIR_SCRIPT" -nopromptfolder > /dev/null 2>&1 &
+popd > /dev/null
