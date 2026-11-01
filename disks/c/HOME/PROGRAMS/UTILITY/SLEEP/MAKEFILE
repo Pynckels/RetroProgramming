@@ -1,0 +1,10 @@
+all: sleep.com
+
+sleep.com: sleep.asm
+    ml /AT /FlLPT2 /Sa /Sp63 /Sl132 sleep.asm
+
+clean:
+    del sleep.com
+    del sleep.obj
+
+
