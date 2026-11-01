@@ -30,9 +30,12 @@ usage() {
 # -------------------------------------------------------------------
 
 print_file() {
+    local in="$1"
     local lpt="$2"
     local pdf="$DIR_SCRIPT/lpt/lpt$lpt/dosbox-x.lpt$lpt.$TIMESTAMP.pdf"
-    local in="$1"
+
+    expand -t8 "$in" > "$in.tmp" && mv "$in.tmp" "$in"
+    rm -f "$in.tmp"
 
     case "$lpt" in
         1) "$PRT1403" -c GREEN -d DMY -e -i LPT1 -j RETROPRG -o "$pdf" -s WIDE -u DOSBOX -y "$in" ;;
