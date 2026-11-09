@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=RetroProgramming
+Exec=/home/acid/Dos/dosbox-x.sh
+Icon=dosbox-x
+Terminal=false
