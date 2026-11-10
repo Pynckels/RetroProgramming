@@ -1,0 +1,117 @@
+
+# ---------------------------------------------------------
+# - Create project files                                  -
+# ---------------------------------------------------------
+
+all: clean lst exe run
+
+
+# ---------------------------------------------------------
+# - Create executable files                               -
+# ---------------------------------------------------------
+
+exe:     exe_c exe_cob exe_for exe_pas
+
+exe_c:   stfm_c.exe
+exe_cob: stfm_cob.exe
+exe_for: stfm_for.exe
+exe_pas: stfm_pas.exe
+
+
+stfm_c.exe: stfm_c.c
+    tcc -ml -v -y stfm_c.c
+    del stfm_c.obj
+
+stfm_cob.exe: stfm_cob.cob stfm_cof.cob
+    cobol stfm_cob.cob;
+    cobol stfm_cof.cob;
+    link  stfm_cob+stfm_cof;
+    del stfm_cob.obj
+    del stfm_cof.obj
+
+stfm_for.exe: stfm_for.for
+    fl /AL stfm_for.for
+    del stfm_for.obj
+
+
+stfm_pas.exe: stfm_pas.pas
+    pas1 stfm_pas.pas;
+    pas2
+    link stfm_pas.obj;
+    del stfm_pas.obj
+
+# ---------------------------------------------------------
+# - Create listing files                                  -
+# ---------------------------------------------------------
+
+lst:     lst_c lst_cob lst_for lst_pas
+
+lst_c:   stfm_c.lst
+lst_cob: stfm_cob.lst stfm_cOF.lst
+lst_for: stfm_for.lst
+lst_pas: STFM_PAS.lst
+
+
+stfm_c.lst: stfm_c.c
+    cl /c /Fcstfm_c.lst stfm_c.c
+    del stfm_c.obj
+
+
+stfm_cob.lst: stfm_cob.cob stfm_cof.cob
+    cobol stfm_cob.cob; ASMLIST"stfm_cob.lst" SOURCEASM
+    cobol stfm_cof.cob; ASMLIST"stfm_cof.lst" SOURCEASM
+    link  stfm_cob+stfm_cof;
+    del stfm_cob.exe
+    del stfm_cob.idy
+    del stfm_cob.obj
+    del stfm_cof.idy
+    del stfm_cof.obj
+
+
+stfm_for.lst: stfm_for.for
+    fl /AL /Fcstfm_for.lst stfm_for.for
+    del stfm_for.exe
+    del stfm_for.obj
+
+
+stfm_pas.lst: stfm_pas.pas
+    pas1 stfm_pas.pas,,,stfm_pas.lst;
+    pas2
+    pas3
+    del stfm_pas.obj
+
+
+# ---------------------------------------------------------
+# - Clean up project files                                -
+# ---------------------------------------------------------
+
+clean:
+    del *.exe
+    del *.lst
+
+
+# ---------------------------------------------------------
+# - Run executable files                                  -
+# ---------------------------------------------------------
+
+run:
+    @echo -----
+    @echo - C -
+    @echo -----
+    stfm_c.exe
+
+    @echo ---------
+    @echo - COBOL -
+    @echo ---------
+    stfm_cob.exe
+
+    @echo -----------
+    @echo - FORTRAN -
+    @echo -----------
+    stfm_for.exe
+
+    @echo ----------
+    @echo - PASCAL -
+    @echo ----------
+    stfm_pas.exe
+
